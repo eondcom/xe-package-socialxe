@@ -11,8 +11,10 @@ SocialXE는 신승엽(a.k.a 난다날아)님이 제작했습니다.
 ## SocialXE Package
 * SocialXE Client Module
 * SocialXE Server Module
-* SocialXE Addons
-* SocialXE Widgets
+* SocialXE Helper Addon
+* SocialXE MID Forwarder Addon
+* SocialXE Comment Widget
+* SocialXE Info Widget
 
 # 제작 
 * Copyright (C) 2014 Beom Jinhyeok
