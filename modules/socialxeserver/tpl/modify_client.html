@@ -1,0 +1,28 @@
+<!--#include("./header.html")-->
+
+<!--%import("filter/modify_client.xml")-->
+
+<form class="x_form-horizontal" action="./" method="get" onsubmit="return procFilter(this, modify_client)" id="fo_obj">
+<input type="hidden" name="client_srl" value="{$client_srl}" />
+<input type="hidden" name="domain" value="{$client_info->domain}" />
+
+	<div class="x_control-group">
+		<div class="x_control-label">Client Token</div>
+		<div class="x_controls">{$client_info->client_token}</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="insert_domain">{$lang->domain}</label>
+		<div class="x_controls">
+			<select name="_domain_list" multiple="multiple" size="{count($domain_list)?count($domain_list):1}">
+				<option loop="$domain_list => $key, $val" value="{$val}">{$val}</option>
+			</select>
+			<button type="button" class="x_btn" onclick="doDeleteDomain()">{$lang->cmd_delete}</button>
+			<br />
+			<input type="text" name="_domain" id="insert_domain" />
+			<button type="button" class="x_btn" onclick="doInsertDomain()">{$lang->cmd_insert}</button>
+		</div>
+	</div>
+	<div class="btnArea">
+		<button type="submit" class="x_btn x_btn-primary">{$lang->cmd_registration}</button>
+	</div>
+</form>

@@ -1,0 +1,39 @@
+.socialxe_comment { color: #999; }
+
+.socialxe_comment .inputTypeText { border-color: #333; background: #999; }
+
+/* Control Button + Submit Button */
+.socialxe_comment span.socialxe_button,
+.socialxe_comment span.socialxe_button button,
+.socialxe_comment span.socialxe_button input { position:relative; margin:0; display:inline-block; border:0; font:12px Sans-serif; white-space:nowrap; background:url(../../../common/tpl/images/buttonBlack.gif) no-repeat; vertical-align:middle;}
+.socialxe_comment span.socialxe_button button,
+.socialxe_comment span.socialxe_button input { height:23px; left:2px; *vertical-align:top; padding:0 10px 0 8px; line-height:24px; background-position:right top; cursor:pointer; *overflow:visible;}
+
+.socialxe_comment .socialxe_service { border-color: #333; background: #222; }
+.socialxe_comment .socialxe_input { border-color: #333; background: #222;}
+.socialxe_comment .socialxe_input .socialxe_name { color: #999; }
+.socialxe_comment .socialxe_input .socialxe_wrap .socialxe_left { border-color: #222; }
+.socialxe_comment .socialxe_input .socialxe_wrap .socialxe_submit input { background: url(../images/submit.black.gif) no-repeat; }
+.socialxe_comment .socialxe_input .socialxe_name .socialxe_master_change { color: #999; }
+.socialxe_comment .socialxe_input .socialxe_name .socialxe_master_change_list a { color: #999; }
+
+.socialxe_comment .socialxe_profile_image { border-color: #444; padding: 2px; background: #333; }
+
+.socialxe_comment .socialxe_content_input { border-color: #333; background: #999;}
+.socialxe_comment .socialxe_content_input textarea { background: #999; }
+
+.socialxe_comment .socialxe_comment_list li { border-color: #333; }
+.socialxe_comment .socialxe_comment_list .socialxe_profile_image { background: #333; border-color: #444}
+.socialxe_comment .socialxe_comment_list .socialxe_date { color: #666 }
+.socialxe_comment .socialxe_comment_list .socialxe_name a { color: #999; }
+.socialxe_comment .socialxe_comment_list .socialxe_more { border-color: #333;}
+.socialxe_comment .xe_content { color: #999; }
+.socialxe_comment .socialxe_comment_list .socialxe_command a { color: #999; }
+
+.socialxe_comment .socialxe_sub_comment .socialxe_command a { color: #999; }
+.socialxe_comment .socialxe_sub_comment .socialxe_write_comment { color: #999; }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.socialxe_comment .socialxe_input .socialxe_name .socialxe_master_change,
+	.socialxe_comment .socialxe_input .socialxe_name .socialxe_master_change_list span { border-color: #999; }
+}

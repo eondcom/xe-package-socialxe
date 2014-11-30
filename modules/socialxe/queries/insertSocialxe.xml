@@ -1,0 +1,14 @@
+<query id="insertSocialxe" action="insert">
+	<tables>
+		<table name="socialxe" />
+	</tables>
+	<columns>
+		<column name="comment_srl" var="comment_srl" notnull="notnull" filter="number" />
+		<column name="module_srl" var="module_srl" notnull="notnull" filter="number" />
+		<column name="provider" var="provider" />
+		<column name="id" var="id" />
+		<column name="social_nick_name" var="social_nick_name" />
+		<column name="profile_image" var="profile_image" />
+		<column name="comment_id" var="comment_id" />
+	</columns>
+</query>

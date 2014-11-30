@@ -1,0 +1,111 @@
+<include target="header.html" />
+<!--%import("filter/insert_config.xml")-->
+
+<form action="./" class="x_form-horizontal" method="post" onsubmit="return procFilter(this, insert_config)">
+	<section class="section">
+		<h1>{$lang->server_settings}</h1>
+		<div class="x_control-group">
+			<label class="x_control-label" for="server_hostname">{$lang->server_hostname}</label>
+			<div class="x_controls">
+				<input type="text" name="server_hostname" id="server_hostname" value="{htmlspecialchars($config->server_hostname?$config->server_hostname:'socialxe.net')}" />
+				<p class="x_help-block">{$lang->about_server_hostname}</p>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<label class="x_control-label" for="server_query">{$lang->server_query}</label>
+			<div class="x_controls">
+				<input type="text" name="server_query" id="server_query" value="{htmlspecialchars($config->server_query?$config->server_query:'/?module=socialxeserver&act=procSocialxeserverAPI')}" />
+				<p class="x_help-block">{$lang->about_server_query}</p>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<label class="x_control-label" for="server_query">{$lang->client_token}</label>
+			<div class="x_controls">
+				<input type="text" name="client_token" id="client_token" value="{htmlspecialchars($config->client_token)}" />
+				<p class="x_help-block">{$lang->about_client_token}</p>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<div class="x_control-label">{$lang->use_ssl}</div>
+			<div class="x_controls">
+				<label class="x_inline" for="use_ssl">
+					<input type="checkbox" name="use_ssl" id="use_ssl" value="Y" checked="checked"|cond="$config->use_ssl == 'Y'" />
+					{$lang->about_use_ssl}
+				</label>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<h1>{$lang->short_url_settings}</h1>
+		<div class="x_control-group">
+			<div class="x_control-label">{$lang->use_short_url}</div>
+			<div class="x_controls">
+				<label class="x_inline" for="use_short_url">
+					<input type="checkbox" name="use_short_url" id="use_short_url" value="Y" checked="checked"|cond="$config->use_short_url == 'Y'" />
+					{$lang->about_use_short_url}
+				</label>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<label class="x_control-label" for="bitly_username">{$lang->bitly_username}</label>
+			<div class="x_controls">
+				<input type="text" name="bitly_username" id="bitly_username" value="{htmlspecialchars($config->bitly_username)}" />
+			</div>
+		</div>
+		<div class="x_control-group">
+			<label class="x_control-label" for="bitly_api_key">{$lang->bitly_api_key}</label>
+			<div class="x_controls">
+				<input type="text" name="bitly_api_key" id="bitly_api_key" value="{htmlspecialchars($config->bitly_api_key)}" />
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<h1>{$lang->service_settings}</h1>
+		<div class="x_control-group">
+			<div class="x_control-label">{$lang->select_service}</div>
+			<div class="x_controls">
+					<label loop="$provider_list => $provider"><input type="checkbox" name="select_service_{$provider}" value="Y" checked="checked"|cond="$config->select_service[$provider] == 'Y'" /> {$lang->provider[$provider]}</label>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<label class="x_control-label" for="hashtag">{$lang->hashtag}</label>
+			<div class="x_controls">
+				<input type="text" name="hashtag" id="hashtag" value="{htmlspecialchars($config->hashtag)}" />
+			</div>
+		</div>
+		<div class="x_control-group">
+			<div class="x_control-label">{$lang->use_social_login}</div>
+			<div class="x_controls">
+				<label class="x_inline" for="use_social_login">
+					<input type="checkbox" name="use_social_login" id="use_social_login" value="Y" checked="checked"|cond="$config->use_social_login == 'Y'" />
+					{$lang->about_use_social_login}
+				</label>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<div class="x_control-label">{$lang->use_social_info}</div>
+			<div class="x_controls">
+				<label class="x_inline" for="use_social_info">
+					<input type="checkbox" name="use_social_info" id="use_social_info" value="Y" checked="checked"|cond="$config->use_social_info == 'Y'" />
+					{$lang->about_use_social_info}
+				</label>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<label class="x_control-label" for="skin">{$lang->skin}</label>
+			<div class="x_controls">
+				<select name="skin">
+					<option loop="$skin_list => $key, $val" value="{$key}" selected="selected"|cond="$config->skin == $key">{$val->title} ({$key})</option>
+				</select>
+			</div>
+		</div>
+	</section>
+
+	<div class="x_clearfix btnArea">
+		<div class="x_pull-right">
+			<button type="submit" class="x_btn x_btn-primary">{$lang->cmd_save}</button>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,14 @@
+<filter name="insert_social_comment" module="socialxe" act="procSocialxeInsertComment">
+	<form>
+		<node target="document_srl" required="true" />
+		<node target="content" required="true" minlength="1" />
+		<node target="skin" required="true" />
+	</form>
+	<response callback_func="completeInsertSocialComment">
+		<tag name="msg" />
+		<tag name="skin" />
+		<tag name="document_srl" />
+		<tag name="list_count" />
+		<tag name="content_link" />
+	</response>
+</filter>

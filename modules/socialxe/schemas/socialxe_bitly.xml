@@ -1,0 +1,8 @@
+<table name="socialxe_bitly">
+	<column name="bitly_srl" type="number" size="11" auto_increment="auto_increment" primary_key="primary_key" />
+	<column name="hash" type="varchar" size="100" notnull="notnull" unique="unique_hash" />
+	<column name="short_url" type="varchar" size="255" notnull="notnull" />
+	<column name="url" type="varchar" size="255" notnull="notnull" index="idx_url" />
+	<column name="title" type="varchar" size="255" index="idx_title" />
+	<column name="regdate" type="date" index="idx_regdate" />
+</table>

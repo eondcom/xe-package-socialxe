@@ -1,0 +1,80 @@
+<fieldset class="socialxe_service">
+<legend>{$lang->my_social_info}</legend>
+	<ul>
+		<!--@foreach($provider_list as $provider)-->
+		<li>
+			<!--@if ($provider_is_logged[$provider])-->
+				<!--@if ($provider != 'xe')-->
+					<a href="{getUrl('', 'module', 'socialxe', 'act', 'dispSocialxeLogout', 'provider', $provider, 'query', $query)}" onclick="infoProviderLogout('{$provider}', '{$skin}'); return false;">
+				<!--@end-->
+				<img width="24" height="24" src="./images/{$provider}_on.png" title="{$lang->provider[$provider]}({$nick_names[$provider]})<!--@if ($provider != 'xe')--> Logout<!--@end-->" alt="{$lang->provider[$provider]}({$nick_names[$provider]})<!--@if ($provider != 'xe')--> Logout<!--@end-->" class="iePngFix"/>
+				<!--@if ($provider != 'xe')-->
+					</a>
+				<!--@end-->
+			<!--@else-->
+				<!--@if ($provider != 'xe')-->
+					<a href="{getUrl('', 'module', 'socialxe', 'act', 'dispSocialxeLogin', 'provider', $provider, 'query', $query)}" onclick="infoProviderLogin(this.href, '{$skin}'); return false;">
+				<!--@end-->
+				<img width="24" height="24" src="./images/{$provider}_off.png" title="{$lang->provider[$provider]}<!--@if ($provider != 'xe')--> Login<!--@end-->" alt="{$lang->provider[$provider]}<!--@if ($provider != 'xe')--> Login<!--@end-->" class="iePngFix"/>
+				<!--@if ($provider != 'xe')-->
+					</a>
+				<!--@end-->
+			<!--@end-->
+		</li>
+		<!--@end-->
+	</ul>
+	<div class="socialxe_command">
+		<!--@if($logged_info)-->
+		<a href="#" onclick="resetInfo('{$skin}'); return false;" class="button socialxe_info_button"><span>{$lang->cmd_reset_info}</span></a>
+		<!--@end-->
+	</div>
+</fieldset>
+
+<!--@if($nick_name)-->
+<div class="socialxe_name">
+	<span>
+	<img width="15" height="15" src="./images/{$master_provider}_small.png" alt="{$lang->provider[$master_provider]}" class="iePngFix"/> {$nick_name}
+	<!--@if($slave_provider)-->
+		(<img width="15" height="15" src="./images/{$slave_provider}_small.png" alt="{$lang->provider[$slave_provider]}" class="iePngFix"/> {$slave_nick_name})
+	<!--@end-->
+	<!--@if(in_array('xe', $logged_provider))-->
+		{@$logged_count-=1;}
+	<!--@end-->
+	<!--@if($logged_count > 1)-->
+		<a href="#" onclick="return false;" class="socialxe_master_change_info">
+		{$lang->cmd_master}
+		</a>
+		<span class="socialxe_master_change_list_info">
+			<!--@foreach($logged_provider as $provider)--><!--@if($provider!='xe')-->
+			<a href="#" onclick="changeInfoMaster('{$provider}', '{$skin}'); return false;" style="cursor:pointer;">{$lang->provider[$provider]}</a>
+			<!--@end--><!--@end-->
+		</span>
+		<script type="text/javascript">
+		<!--
+			// 대표 계정 리스트 숨기기
+			jQuery(".socialxe_master_change_list_info").hide();
+
+			// 대표 계정 변경 누르면 리스트 토글
+			jQuery(".socialxe_master_change_info").bind("click", function(e){
+				jQuery(".socialxe_master_change_list_info").toggle();
+				return false;
+			});
+		-->
+		</script>
+	<!--@end-->
+	</span>
+</div>
+<!--@end-->
+
+
+<div class="socialxe_poweredby">
+	<a href="http://socialxe.net/" target="_blank"><img src="./images/poweredby.png" alt="powered by SocialXE" class="iePngFix"/></a>
+</div>
+
+<div style="clear:both;"></div>
+
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		autoInputName('{htmlspecialchars($nick_name)}');
+	});
+</script>

@@ -1,0 +1,17 @@
+<!--%import("css/style.css")-->
+<!--%import("filter/signup.xml")-->
+<!--%import("js/socialxe.js")-->
+
+<div class="socialxe_login">
+	<h3>{$lang->title_social_login_additional}</h3>
+	<p>{$lang->about_social_login_additional}</p>
+
+	<form id="fo_insert_member" action="./" method="post" onsubmit="return procFilter(this, signup)" no-error-return-url="true">
+	<input type="hidden" name="provider" value="{$provider}" />
+		<div><label for="email">{$lang->email_address}</label> <br/><input type="text" id="email" name="email_address" value="" class="inputTypeText w200 itx"/></div>
+		<p>{$lang->about_email_address}</p>
+		<div><label for="mailing">{$lang->allow_mailing}</label> <input type="checkbox" class="checkbox" id="mailing" name="allow_mailing" value="Y" checked="checked" /></div>
+		<p>{$lang->about_allow_mailing}</p>
+		<div class="submit"><span class="button black strong"><input type="submit" value="{$lang->cmd_registration}" accesskey="s" /></span></div>
+	</form>
+</div>

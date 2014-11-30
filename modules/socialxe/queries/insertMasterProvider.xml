@@ -1,0 +1,9 @@
+<query id="insertMasterProvider" action="insert">
+	<tables>
+		<table name="socialxe_master" />
+	</tables>
+	<columns>
+		<column name="member_srl" var="member_srl" notnull="notnull" filter="number" />
+		<column name="master" var="master" notnull="notnull" />
+	</columns>
+</query>

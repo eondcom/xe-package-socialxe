@@ -1,0 +1,17 @@
+<!--#include("./header.html")-->
+
+<!--%import("filter/insert_service_module.xml")-->
+<p>
+	{nl2br($lang->about_insert_service_module)}
+</p>
+<form class="x_form-horizontal" action="./" method="post" onsubmit="return procFilter(this, insert_service_module);">
+	<div class="x_control-group">
+		<label class="x_control-label" for="service_id">{$lang->mid}</label>
+		<div class="x_controls">
+			<input type="text" name="service_id" id="service_id" />
+		</div>
+	</div>
+	<div class="btnArea">
+		<button type="submit" class="x_btn x_btn-primary">{$lang->cmd_insert_service_module}</button>
+	</div>
+</form>

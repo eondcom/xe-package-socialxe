@@ -1,0 +1,13 @@
+<load target="js/admin.js" />
+
+<div class="x_page-header">
+	<h1>{$lang->socialxeserver}</h1>
+</div>
+
+<ul class="x_nav x_nav-tabs">
+	<li class="x_active"|cond="$act == 'dispSocialxeserverAdminClient'"><a href="{getUrl('act', 'dispSocialxeserverAdminClient')}">{$lang->cmd_client_list}</a></li>
+	<li cond="$act == 'dispSocialxeserverAdminModifyClient'" class="x_active"><a href="#">{$lang->cmd_modify_client}</a></li>
+	<li class="x_active"|cond="$act == 'dispSocialxeserverAdminServiceConfig'"><a href="{getUrl('act', 'dispSocialxeserverAdminServiceConfig')}">{$lang->cmd_service_config}</a></li>
+	<li cond="$service_module_info" class="x_active"|cond="$act == 'dispSocialxeserverAdminServiceGrant'"><a href="{getUrl('act', 'dispSocialxeserverAdminServiceGrant')}">{$lang->cmd_manage_grant}</a></li>
+	<li class="x_active"|cond="$act == 'dispSocialxeserverAdminConfig'"><a href="{getUrl('act', 'dispSocialxeserverAdminConfig')}">{$lang->cmd_setting}</a></li>
+</ul>

@@ -1,0 +1,19 @@
+.wide {width:734px;}
+.pcbg{display:block; font-family: ³ª´®°íµñ,NanumGothic,µ¸¿ò,Dotum,Arial,Helvetica,sans-serif;}
+#wrapper {font-weight: bold; font-size: 14pt; height: 241px; padding: 23px 0 0 0; margin: 100px auto 0 auto; }
+#wrapper h1 {float:top; text-indent:-100em; overflow:hidden; height: 60px; background-position:0px 0px; padding:0; margin:0; }
+#login_info {float:top; width: 409px; height: 181px; background-position:0px -60px; margin:0; padding: 23px 290px 0 32px;}
+
+@media handheld, only screen and (max-device-width: 600px) {
+	.wide {width:100%}
+	.pcbg{background:none;}
+	#wrapper {font-weight:normal; font-size: 15px; padding: 0px; margin:0px; height:auto;}
+	#wrapper h1 { height: 45px; background: url(../images/login_info_mini.gif) no-repeat; }
+	#login_info{ width:100%; padding:0; margin:0 5px 0 5px; height:auto;}
+}
+@media all and (-webkit-min-device-pixel-ratio: 2) {
+    #wrapper h1 { background: url(../images/login_info_mini_2x.gif) no-repeat; background-size:600px 45px;}
+}
+@media all and (-webkit-min-device-pixel-ratio: 2) {
+    #wrapper h1 { background: url(../images/login_info_mini_2x.gif) no-repeat; background-size:600px 45px;}
+}

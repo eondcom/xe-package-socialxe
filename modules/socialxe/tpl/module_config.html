@@ -1,0 +1,21 @@
+<!--%import("filter/insert_socialxe_module_config.xml")-->
+
+<section class="section">
+	<h1>{$lang->socialxe}</h1>
+	<form class="x_form-horizontal" action="./" method="post" onsubmit="return procFilter(this, insert_socialxe_module_config)">
+	<input type="hidden" name="target_module_srl" value="{$config->module_srl?$config->module_srl:$module_srls}" />
+
+		<div class="x_control-group">
+			<div class="x_control-label">{$lang->use_social_info}</div>
+			<div class="x_controls">
+				<label class="x_inline">
+					<input type="checkbox" name="use_social_info" value="Y" checked="checked"|cond="$config->use_social_info == 'Y'" />
+					{$lang->about_part_social_info}
+				</label>
+			</div>
+		</div>
+		<div class="btnArea">
+			<button type="submit" class="x_btn x_btn-primary">{$lang->cmd_save}</button>
+		</div>
+	</form>
+</section>

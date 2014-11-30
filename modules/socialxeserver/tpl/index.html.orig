@@ -1,0 +1,76 @@
+<include target="header.html" />
+
+<!--%import("filter/insert_config.xml")-->
+
+<form class="x_form x_form-horizontal" action="./" method="get" onsubmit="return procFilter(this, insert_config)">
+	<div class="x_control-group">
+		<label class="x_control-label" for="twitter_consumer_key">{$lang->twitter_consumer_key}</label>
+		<div class="x_controls">
+			<input type="text" name="twitter_consumer_key" id="twitter_consumer_key" value="{htmlspecialchars($config->twitter_consumer_key)}" />
+			<p class="x_help-block">Callback: {getFullUrl('', 'module', 'socialxeserver', 'act', 'procSocialxeserverCallback', 'provider', 'twitter')}</p>
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="twitter_consumer_key_secret">{$lang->twitter_consumer_key_secret}</label>
+		<div class="x_controls">
+			<input type="text" name="twitter_consumer_key_secret" id="twitter_consumer_key_secret" value="{htmlspecialchars($config->twitter_consumer_key_secret)}" />
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="twitter_access_token">{$lang->twitter_access_token}</label>
+		<div class="x_controls">
+			<input type="text" name="twitter_access_token" id="twitter_access_token" value="{htmlspecialchars($config->twitter_access_token)}" />
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="twitter_access_token_secret">{$lang->twitter_access_token_secret}</label>
+		<div class="x_controls">
+			<input type="text" name="twitter_access_token_secret" id="twitter_access_token_secret" value="{htmlspecialchars($config->twitter_access_token_secret)}" />
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="me2day_application_key">{$lang->me2day_application_key}</label>
+		<div class="x_controls">
+			<input type="text" name="me2day_application_key" id="me2day_application_key" value="{htmlspecialchars($config->me2day_application_key)}" />
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="me2day_user_id">{$lang->me2day_user_id}</label>
+		<div class="x_controls">
+			<input type="text" name="me2day_user_id" id="me2day_user_id" value="{htmlspecialchars($config->me2day_user_id)}" />
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="me2day_api_key">{$lang->me2day_api_key}</label>
+		<div class="x_controls">
+			<input type="text" name="me2day_api_key" id="me2day_api_key" value="{htmlspecialchars($config->me2day_api_key)}" />
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="facebook_app_id">{$lang->facebook_app_id}</label>
+		<div class="x_controls">
+			<input type="text" name="facebook_app_id" id="facebook_app_id" value="{htmlspecialchars($config->facebook_app_id)}" />
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="facebook_app_secret">{$lang->facebook_app_secret}</label>
+		<div class="x_controls">
+			<input type="text" name="facebook_app_secret" id="facebook_app_secret" value="{htmlspecialchars($config->facebook_app_secret)}" />
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="bitly_username">{$lang->bitly_username}</label>
+		<div class="x_controls">
+			<input type="text" name="bitly_username" id="bitly_username" value="{htmlspecialchars($config->bitly_username)}" />
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="bitly_api_key">{$lang->bitly_api_key}</label>
+		<div class="x_controls">
+			<input type="text" name="bitly_api_key" id="bitly_api_key" value="{htmlspecialchars($config->bitly_api_key)}" />
+		</div>
+	</div>
+	<div class="btnArea">
+		<button type="submit" class="x_btn x_btn-primary">{$lang->cmd_registration}</button>
+	</div>
+</form>

@@ -1,0 +1,11 @@
+<query id="addSubCommentCount" action="update">
+	<tables>
+		<table name="socialxe" />
+	</tables>
+	<columns>
+		<column name="sub_comment_count" var="sub_comment_count" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="comment_srl" var="comment_srl" notnull="notnull" pipe="and" />
+	</conditions>
+</query>

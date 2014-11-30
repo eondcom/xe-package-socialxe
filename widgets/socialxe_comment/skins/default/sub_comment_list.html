@@ -1,0 +1,67 @@
+<ul>
+<!--@foreach($comment_list as $oComment)-->
+<li id="social_comment_{$oComment->get('comment_srl')}">
+	<div>
+		<span class="socialxe_name">
+			<!--@if ($oComment->get('member_srl'))-->
+				<img src="./images/xe_small.png" alt="XE" class="iePngFix"/>
+				<a href="#popup_menu_area" class="member_{$oComment->get('member_srl')}" onclick="return false">{$oComment->getNickName()}</a>
+			<!--@end-->
+			<!--@if ($oComment->get('member_srl') && $oComment->getSocialNickName())-->
+				(
+			<!--@end-->
+			<!--@if ($oComment->getSocialNickName())-->
+				<!--@if ($oComment->get('link'))-->
+					<a href="{$oComment->get('link')}" target="_blank"><img src="./images/{$oComment->get('provider')}_small.png" alt="{$lang->provider[$oComment->get('provider')]}" class="iePngFix"/> {$oComment->getSocialNickName()}</a>
+				<!--@else-->
+					<img src="./images/{$oComment->get('provider')}_small.png" alt="{$lang->provider[$oComment->get('provider')]}" class="iePngFix"/> {$oComment->getSocialNickName()}
+				<!--@end-->
+			<!--@end-->
+			<!--@if ($oComment->get('member_srl') && $oComment->getSocialNickName())-->
+				)
+			<!--@end-->
+		</span>
+		<span class="socialxe_date">{getTimeGap($oComment->get('regdate'), "Y.m.d H:i:s")}</span>
+		<span class="socialxe_command">
+		<!--@if($oComment->isGranted())-->
+			<a href="#" onclick="deleteSocialComment({$oComment->get('comment_srl')}); return false;" style="cursor: pointer">{$lang->cmd_delete}</a>,
+		<!--@end-->
+		<a href="#" class="socialxe_write_comment" onclick="writeSubSubComment(this, '{addslashes($oComment->get('reply_prefix'))}'); return false;">{$lang->write_comment}</a>
+		</span>
+	</div>
+	<div class="socialxe_content">{$oComment->getContent(false)}</div>
+</li>
+<!--@end-->
+</ul>
+
+<!--@if($page_navigation->total_page > 1)-->
+<div class="socialxe_pagination">
+	<a href="#" onclick="viewSubComment('{$skin}', {$document_srl}, {$comment_srl}, '{$content_link}', 1, true); return false;" class="socialxe_prevEnd"><<</a>
+	<!--@while($page_no = $page_navigation->getNextPage())-->
+		<!--@if($page_navigation->cur_page == $page_no)-->
+			<strong>{$page_no}</strong>
+		<!--@else-->
+			<a href="#" onclick="viewSubComment('{$skin}', {$document_srl}, {$comment_srl}, '{$content_link}', {$page_no}, true); return false;">{$page_no}</a>
+		<!--@end-->
+	<!--@end-->
+	<a href="#" onclick="viewSubComment('{$skin}', {$document_srl}, {$comment_srl}, '{$content_link}', {$page_navigation->last_page}, true); return false;" class="socialxe_nextEnd">>></a>
+</div>
+<!--@end-->
+
+<!--@if($allow_comment)-->
+<div class="socialxe_sub_comment_input">
+	<form action="./" method="post" onsubmit="return socialSend(this, insert_sub_comment);">
+	<input type="hidden" name="document_srl" value="{$document_srl}" />
+	<input type="hidden" name="comment_srl" value="{$comment_srl}" />
+	<input type="hidden" name="content_link" value="{$content_link}" />
+	<input type="hidden" name="skin" value="{$skin}" />
+		<div class="socialxe_left">
+			<!--// IE6 textarea width 100% 버그 fix -->
+			<fieldset><div>
+			<textarea class="socialxe_resizable" rows="1" cols="50" name="content"></textarea>
+			</div></fieldset>
+		</div>
+		<div class="socialxe_right"><span class="socialxe_button"><input type="submit" value="{$lang->cmd_submit}" /></span></div>
+	</form>
+</div>
+<!--@end-->

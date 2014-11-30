@@ -1,0 +1,11 @@
+<query id="updateMasterProvider" action="update">
+	<tables>
+		<table name="socialxe_master" />
+	</tables>
+	<columns>
+		<column name="master" var="master" notnull="notnull" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="member_srl" var="member_srl" notnull="notnull" pipe="and" filter="number" />
+	</conditions>
+</query>

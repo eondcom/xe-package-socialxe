@@ -1,0 +1,75 @@
+<!--@if ($total)-->
+<div class="socialxe_comment_info">{$lang->total} : {$total}</div>
+<!--@end-->
+
+<ul>
+{@$c = 0}
+<!--@foreach($comment_list as $oComment)-->
+{@$c++}
+<li id="social_comment_{$oComment->get('comment_srl')}" class="socialxe_comment_item">
+	<a name="comment_{$oComment->get('comment_srl')}"></a>
+	<div class="socialxe_profile_image">
+		<!--@if ($oComment->get('link'))-->
+			<a href="{$oComment->get('link')}" target="_blank">
+		<!--@end-->
+
+		<!--@if($profile_image = $oComment->getProfileImage())-->
+			<img src="{$profile_image}" alt="profile image" class="iePngFix"/>
+		<!--@else-->
+			<img src="./images/anonymous.png" alt="profile image" />
+		<!--@end-->
+
+		<!--@if ($oComment->get('link'))-->
+			</a>
+		<!--@end-->
+	</div>
+	<div class="socialxe_right">
+		<div class="socialxe_name">
+			<!--@if ($oComment->get('member_srl') || !$oComment->get('provider'))-->
+				<img src="./images/xe_small.png" alt="XE" class="iePngFix"/>
+				<a href="#popup_menu_area" class="member_{$oComment->get('member_srl')}" onclick="return false">{$oComment->getNickName()}</a>
+			<!--@end-->
+			<!--@if ($oComment->get('member_srl') && $oComment->getSocialNickName())-->
+				(
+			<!--@end-->
+			<!--@if ($oComment->getSocialNickName())-->
+				<!--@if ($oComment->get('link'))-->
+					<a href="{$oComment->get('link')}" target="_blank"><img src="./images/{$oComment->get('provider')}_small.png" alt="{$lang->provider[$oComment->get('provider')]}" class="iePngFix"/> {$oComment->getSocialNickName()}</a>
+				<!--@else-->
+					<img src="./images/{$oComment->get('provider')}_small.png" alt="{$lang->provider[$oComment->get('provider')]}" class="iePngFix"/> {$oComment->getSocialNickName()}
+				<!--@end-->
+			<!--@end-->
+			<!--@if ($oComment->get('member_srl') && $oComment->getSocialNickName())-->
+				)
+			<!--@end-->
+		</div>
+		<div class="socialxe_content">{$oComment->getContent(false)}</div>
+		<div class="socialxe_date">{getTimeGap($oComment->get('regdate'), "Y.m.d H:i:s")}</div>
+		<div class="socialxe_command">
+			<!--@if($oComment->isGranted())-->
+				<a href="#" onclick="deleteSocialComment({$oComment->get('comment_srl')}); return false;" style="cursor: pointer">{$lang->cmd_delete}</a>,
+			<!--@end-->
+
+			<a href="#" id="socialxe_write_comment_{$oComment->get('comment_srl')}" class="socialxe_write_comment" onclick="viewSubComment('{$skin}', {$document_srl}, {$oComment->get('comment_srl')}, '{$content_link}'); return false;">
+				{$lang->comment} {$oComment->get('sub_comment_count')}
+			</a>
+		</div>
+		<div id="socialxe_comment_{$oComment->get('comment_srl')}" class="socialxe_sub_comment" style="display:none;"></div>
+		<!--@if ($use_comment_srl && $auto_login_key)-->
+			<script type="text/javascript">
+			<!--
+				viewSubComment('{$skin}', {$document_srl}, {$oComment->get('comment_srl')}, '{$content_link}')
+			-->
+			</script>
+		<!--@end-->
+	</div>
+</li>
+{@$last_comment_srl = $oComment->get('comment_srl')}
+<!--@end-->
+</ul>
+<!--@if ($c && $c == $list_count)-->
+	<div class="socialxe_more" onclick="moreComment('{$skin}', {$document_srl}, {$last_comment_srl}, {$list_count}, '{$content_link}');">{$lang->more}</div>
+<!--@end-->
+<!--@if ($use_comment_srl)-->
+	<div class="socialxe_more" onclick="replaceComment('{$skin}', {$document_srl}, {$list_count}, '{$content_link}');">{$lang->viewComment}</div>
+<!--@end-->

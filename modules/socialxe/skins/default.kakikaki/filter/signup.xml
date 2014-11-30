@@ -1,0 +1,10 @@
+<filter name="signup" module="socialxe" act="procSocialxeLoginInsert" confirm_msg_code="confirm_submit">
+	<form>
+		<node target="provider" required="true" />
+		<node target="email_address" required="true" minlength="1" maxlength="200" filter="email" />
+	</form>
+	<response callback_func="completeInsert">
+		<tag name="error" />
+		<tag name="message" />
+	</response>
+</filter>

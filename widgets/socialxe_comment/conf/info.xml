@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+	<title xml:lang="ko">SocialXE 댓글</title>
+	<title xml:lang="en">SocialXE Comment</title>
+	<title xml:lang="jp">SocialXEコメント</title>
+	<title xml:lang="zh-TW">SocialXE回覆</title>
+	<description xml:lang="ko">SocialXE 댓글</description>
+	<description xml:lang="en">SocialXE Comment</description>
+	<description xml:lang="jp">SocialXEコメント</description>
+	<description xml:lang="zh-TW">SocialXE回覆</description>
+	<version>1.0.8</version>
+	<date>2011-12-23</date>
+	<license>MIT</license>
+
+	<author email_address="flysky@flysky.kr" link="http://socialxe.net">
+		<name xml:lang="ko">난다날아</name>
+		<name xml:lang="en">flysky</name>
+		<name xml:lang="jp">flysky</name>
+		<name xml:lang="zh-TW">flysky</name>
+	</author>
+
+	<extra_vars>
+		<var id="document_srl">
+			<type>text</type>
+			<name xml:lang="ko">댓글이 등록될 문서번호</name>
+			<name xml:lang="en">Document serial number, comment would be posted.</name>
+			<name xml:lang="jp">コメントを登録するドキュメント番号（ドキュメントsrl）</name>
+			<name xml:lang="zh-TW">請輸入主題編號</name>
+		</var>
+		<var id="content_title">
+			<type>text</type>
+			<name xml:lang="ko">소셜 서비스에 등록될 제목</name>
+			<name xml:lang="en">Title of contents, posted on SNS</name>
+			<name xml:lang="jp">ソーシャルサイトに登録するタイトル</name>
+			<name xml:lang="zh-TW">請輸入社交服務標題</name>
+		</var>
+		<var id="content_link">
+			<type>text</type>
+			<name xml:lang="ko">소셜 서비스에 등록될 주소</name>
+			<name xml:lang="en">Link url of contents, posted on SNS</name>
+			<name xml:lang="jp">ソーシャルサイトに登録するアドレス（url)</name>
+			<name xml:lang="zh-TW">請輸入社交服務網址</name>
+		</var>
+		<var id="list_count">
+			<type>text</type>
+			<name xml:lang="ko">한번에 보여질 댓글 개수(기본값: 10)</name>
+			<name xml:lang="en">The number of comments, viewed on a page(default: 10)</name>
+			<name xml:lang="jp">出力するコメントリスト数（デフォルト：１０個）</name>
+			<name xml:lang="zh-TW">每頁所顯示的回覆數。(預設: 10)</name>
+		</var>
+		<var id="enter_send">
+			<type>select</type>
+			<name xml:lang="ko">엔터로 바로 댓글 등록</name>
+			<name xml:lang="en">Post a comment with enter key</name>
+			<name xml:lang="jp">エンターでコメント登録</name>
+			<name xml:lang="zh-TW">按 Enter鍵回覆</name>
+			<options>
+				<value>Y</value>
+				<name xml:lang="ko">사용</name>
+				<name xml:lang="en">Activate</name>
+				<name xml:lang="jp">使う</name>
+				<name xml:lang="zh-TW">啟用</name>
+			</options>
+			<options>
+				<value>N</value>
+				<name xml:lang="ko">사용안함</name>
+				<name xml:lang="en">Deactivate</name>
+				<name xml:lang="jp">使わない</name>
+				<name xml:lang="zh-TW">停用</name>
+			</options>
+		</var>
+		<var id="auto_view_sub">
+			<type>select</type>
+			<name xml:lang="ko">대댓글 자동 펼침</name>
+			<name xml:lang="en">대댓글 자동 펼침</name>
+			<name xml:lang="jp">대댓글 자동 펼침</name>
+			<name xml:lang="zh-TW">대댓글 자동 펼침</name>
+			<options>
+				<value>N</value>
+				<name xml:lang="ko">사용안함</name>
+				<name xml:lang="en">Deactivate</name>
+				<name xml:lang="jp">使わない</name>
+				<name xml:lang="zh-TW">停用</name>
+			</options>
+			<options>
+				<value>Y</value>
+				<name xml:lang="ko">사용</name>
+				<name xml:lang="en">Activate</name>
+				<name xml:lang="jp">使う</name>
+				<name xml:lang="zh-TW">啟用</name>
+			</options>
+		</var>
+	</extra_vars>
+</widget>

@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* NHN > UIT Center > Open UI Tech. Team > Jeong Chan Myeong(dece24@nhncorp.com) */
+
+/* Pagination */
+.socialxe_pagination{ padding:15px 0; margin:0; text-align:center;}
+.socialxe_pagination *{ margin:0; padding:0;}
+.socialxe_pagination img{ border:0;}
+.socialxe_pagination a,
+.socialxe_pagination strong{ position:relative; display:inline-block; text-decoration:none; line-height:normal; color:#4d4d4d; font-family:Tahoma, Sans-serif; margin:0; padding:2px 6px; font-size:11px; vertical-align:middle;}
+.socialxe_pagination strong{ color:#ff3636 !important; border:1px solid #e7e7e7;}
+.socialxe_pagination a.socialxe_prev,
+.socialxe_pagination a.socialxe_prevEnd,
+.socialxe_pagination a.socialxe_next,
+.socialxe_pagination a.socialxe_nextEnd{ font-weight:normal !important; margin:0 !important; white-space:nowrap; text-decoration:none !important; border:1px solid #e7e7e7; }
+.socialxe_pagination a.socialxe_prevEnd{ background-position:left center; }
+.socialxe_pagination a.socialxe_nextEnd{ background-position:right center; }

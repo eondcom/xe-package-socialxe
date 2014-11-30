@@ -1,0 +1,10 @@
+<table name="socialxe">
+	<column name="comment_srl" type="number" size="11" notnull="notnull" primary_key="primary_key" />
+	<column name="module_srl" type="number" size="11" default="0" notnull="notnull" index="idx_module_srl" />
+	<column name="provider" type="varchar" size="20" />
+	<column name="profile_image" type="varchar" size="255" />
+	<column name="id" type="varchar" size="100" />
+	<column name="social_nick_name" type="varchar" size="100" />
+	<column name="comment_id" type="varchar" size="100" />
+	<column name="sub_comment_count" type="number" size="5" default="0"/>
+</table>

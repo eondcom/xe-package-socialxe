@@ -1,0 +1,4 @@
+<table name="socialxe_master">
+	<column name="member_srl" type="number" size="11" notnull="notnull" primary_key="primary_key" />
+	<column name="master" type="varchar" size="20" />
+</table>

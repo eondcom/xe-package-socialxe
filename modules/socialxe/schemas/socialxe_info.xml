@@ -1,0 +1,8 @@
+<table name="socialxe_info">
+	<column name="member_srl" type="number" size="11" notnull="notnull" index="idx_member_srl"/>
+	<column name="provider" type="varchar" size="20" primary_key="primary_key" />
+	<column name="id" type="varchar" size="100" primary_key="primary_key" />
+	<column name="nick_name" type="varchar" size="100" />
+	<column name="send" type="varchar" size="1" default="Y" />
+	<column name="access" type="text" />
+</table>

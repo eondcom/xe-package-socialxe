@@ -1,0 +1,12 @@
+<query id="updateSocialSend" action="update">
+	<tables>
+		<table name="socialxe_info" />
+	</tables>
+	<columns>
+		<column name="send" var="send" default="N" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="member_srl" var="member_srl" notnull="notnull" pipe="and" filter="number" />
+		<condition operation="equal" column="provider" var="provider" notnull="notnull" pipe="and" />
+	</conditions>
+</query>

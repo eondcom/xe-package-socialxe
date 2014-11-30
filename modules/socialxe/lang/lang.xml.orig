@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lang>
+	<item name="socialxe">
+		<value xml:lang="ko"><![CDATA[SocialXE]]></value>
+		<value xml:lang="en"><![CDATA[SocialXE]]></value>
+	</item>
+	<item name="client_token">
+		<value xml:lang="ko"><![CDATA[Client Token]]></value>
+		<value xml:lang="en"><![CDATA[Client Token]]></value>
+	</item>
+	<item name="about_client_token">
+		<value xml:lang="ko"><![CDATA[SocialXE 사이트에서 발급받은 Client Token을 입력하세요.]]></value>
+		<value xml:lang="en"><![CDATA[Insert Client Token, you get, from SocialXE site.]]></value>
+		<value xml:lang="jp"><![CDATA[SocialXEホームページで発給受けた Client Tokenを与えて下さい。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[請輸入由 SocialXE網站發行的 Client Token]]></value>
+	</item>
+	<item name="server_hostname">
+		<value xml:lang="ko"><![CDATA[SocialXE 서버의 이름]]></value>
+		<value xml:lang="en"><![CDATA[SocialXE server hostname]]></value>
+		<value xml:lang="jp"><![CDATA[SocialXEサーバのネーム]]></value>
+		<value xml:lang="zh-TW"><![CDATA[SocialXE主機名稱]]></value>
+	</item>
+	<item name="about_server_hostname">
+		<value xml:lang="ko"><![CDATA[SocialXE 기능을 요청할 서버의 도메인을 입력해주세요.]]></value>
+		<value xml:lang="en"><![CDATA[Insert a server domain that provides SocialXE functions.]]></value>
+		<value xml:lang="jp"><![CDATA[SocialXE機能を要請するサーバのドメインを与えて下さい。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[請輸入 SocialXE主機域名]]></value>
+	</item>
+	<item name="server_query">
+		<value xml:lang="ko"><![CDATA[SocialXE 서버 경로]]></value>
+		<value xml:lang="en"><![CDATA[SocialXE server directory]]></value>
+		<value xml:lang="jp"><![CDATA[SocialXEサーバの経路]]></value>
+		<value xml:lang="zh-TW"><![CDATA[SocialXE 主機路徑]]></value>
+	</item>
+	<item name="about_server_query">
+		<value xml:lang="ko"><![CDATA[SocialXE 기능을 요청할 query url을 입력해 주세요.]]></value>
+		<value xml:lang="en"><![CDATA[Insert SocialXE request accessable query url.]]></value>
+		<value xml:lang="jp"><![CDATA[SocialXE機能を要請するquery urlを与えて下さい。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[請輸入 SocialXE query 網址]]></value>
+	</item>
+	<item name="use_ssl">
+		<value xml:lang="ko"><![CDATA[SSL 연결]]></value>
+		<value xml:lang="en"><![CDATA[SSL connection]]></value>
+		<value xml:lang="jp"><![CDATA[SSLコネクション]]></value>
+		<value xml:lang="zh-TW"><![CDATA[SSL]]></value>
+	</item>
+	<item name="about_use_ssl">
+		<value xml:lang="ko"><![CDATA[SocialXE 서버와 통신할 때 보안연결을 사용합니다.]]></value>
+		<value xml:lang="en"><![CDATA[Use secured connection to communicate with SocialXE server.]]></value>
+		<value xml:lang="jp"><![CDATA[SocialXEサーバと通信する時にSSL保安連結を使います。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[使用安全認證與 SocialXE主機連線。]]></value>
+	</item>
+	<item name="hashtag">
+		<value xml:lang="ko"><![CDATA[태그]]></value>
+		<value xml:lang="en"><![CDATA[Hashtag]]></value>
+		<value xml:lang="jp"><![CDATA[タグ]]></value>
+		<value xml:lang="zh-TW"><![CDATA[標籤]]></value>
+	</item>
+	<item name="about_hashtag">
+		<value xml:lang="ko"><![CDATA[소셜 서비스로 글이 전송될 때 표시될 태그를 설정하세요. (#생략하고 작성)]]></value>
+		<value xml:lang="en"><![CDATA[Set common hashtag, when documents are displayed on social network services (omit #)]]></value>
+		<value xml:lang="jp"><![CDATA[ソーシャルサイトにドキュメントを伝送する時に表示されるタグを設定して下さい。(#は略します。）]]></value>
+		<value xml:lang="zh-TW"><![CDATA[轉貼文章到社交網站時，請先查看標籤設定 (#可省略不寫)]]></value>
+	</item>
+	<item name="select_service">
+		<value xml:lang="ko"><![CDATA[서비스 선택]]></value>
+		<value xml:lang="en"><![CDATA[Select service]]></value>
+		<value xml:lang="jp"><![CDATA[サービス選択]]></value>
+		<value xml:lang="zh-TW"><![CDATA[服務選擇]]></value>
+	</item>
+	<item name="use_social_login">
+		<value xml:lang="ko"><![CDATA[소셜 로그인 사용]]></value>
+		<value xml:lang="en"><![CDATA[Use social sign in]]></value>
+		<value xml:lang="jp"><![CDATA[ソーシャルログイン使用]]></value>
+		<value xml:lang="zh-TW"><![CDATA[社交登入]]></value>
+	</item>
+	<item name="about_use_social_login">
+		<value xml:lang="ko"><![CDATA[사이트에 별도의 회원가입 없이 소셜 네트워크 아이디로 로그인 가능하게 하려면 체크하세요.]]></value>
+		<value xml:lang="en"><![CDATA[If you would allow SNS ID to sign in your site without joining process of your site membership, check this.]]></value>
+		<value xml:lang="jp"><![CDATA[別途の会員登録なく、ソーシャルIDでのログインを許可するためにはチェックして下さい。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[勾選此項將允許您的社交帳號登入網站而不需要在網站註冊會員。]]></value>
+	</item>
+	<item name="use_social_info">
+		<value xml:lang="ko"><![CDATA[소셜 정보 통합 사용]]></value>
+		<value xml:lang="en"><![CDATA[Use social information integrating]]></value>
+		<value xml:lang="jp"><![CDATA[ソーシャル情報統合使用]]></value>
+		<value xml:lang="zh-TW"><![CDATA[社交資料]]></value>
+	</item>
+	<item name="about_use_social_info">
+		<value xml:lang="ko"><![CDATA[회원 정보에 소셜 정보를 통합하고 글, 댓글에 대해 자동으로 소셜 연동이 되도록 합니다.]]></value>
+		<value xml:lang="en"><![CDATA[Integrate social network service to member's information, and his or her documents and comments would be automatically linked to SNS site.]]></value>
+		<value xml:lang="jp"><![CDATA[会員情報にソーシャル情報を統合して、ドキュメントとコメントを自動でソーシャルサービスと連動します。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[整合社交網路服務到會員資訊，所發表的主題與回覆將會自動連結到社交網站。]]></value>
+	</item>
+	<item name="about_part_social_info">
+		<value xml:lang="ko"><![CDATA[이 모듈에서 쓰는 글, 댓글에 대해 소셜 통합 기능을 이용할 수 있도록 합니다.]]></value>
+		<value xml:lang="en"><![CDATA[Allow this module's documents and comments to be linked to SNS site with social information integrating function.]]></value>
+		<value xml:lang="jp"><![CDATA[このモジュールのドキュメントとコメントにソーシャル統合機能を使います。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[允許該模組的主題與回復可連結到社交網站藉由社交資訊整合功能。]]></value>
+	</item>
+	<item name="use_short_url">
+		<value xml:lang="ko"><![CDATA[짧은 주소 사용]]></value>
+		<value xml:lang="en"><![CDATA[Short URL]]></value>
+	</item>
+	<item name="about_use_short_url">
+		<value xml:lang="ko"><![CDATA[소셜 사이트로 글의 링크를 전달할 때 짧게 줄여진 주소를 사용합니다.]]></value>
+		<value xml:lang="en"><![CDATA[Send comments or documents with short url.]]></value>
+	</item>
+	<item name="bitly_username">
+		<value xml:lang="ko"><![CDATA[bit.ly Username]]></value>
+		<value xml:lang="en"><![CDATA[bit.ly Username]]></value>
+		<value xml:lang="zh-TW"><![CDATA[bit.ly 帳號]]></value>
+	</item>
+	<item name="bitly_api_key">
+		<value xml:lang="ko"><![CDATA[bit.ly API Key]]></value>
+		<value xml:lang="en"><![CDATA[bit.ly API Key]]></value>
+		<value xml:lang="zh-TW"><![CDATA[bit.ly API 密鑰]]></value>
+	</item>
+	<item name="title_social_login_additional">
+		<value xml:lang="ko"><![CDATA[소셜 로그인 추가 정보 입력]]></value>
+		<value xml:lang="en"><![CDATA[Enter additional information for Social Sign In]]></value>
+		<value xml:lang="jp"><![CDATA[ソーシャルログイン追加情報入力]]></value>
+		<value xml:lang="zh-TW"><![CDATA[請輸入社交登入附加資料。]]></value>
+	</item>
+	<item name="about_social_login_additional">
+		<value xml:lang="ko"><![CDATA[처음 로그인 시도하셨군요! 아래 추가 정보 입력이 필요합니다.]]></value>
+		<value xml:lang="en"><![CDATA[You never tried Social Sign in before! Please, insert severl informations below.]]></value>
+		<value xml:lang="jp"><![CDATA[始めてのログインですね!　下の追加情報を入力して下さい。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[開始登入! 請先輸入以下主機資料]]></value>
+	</item>
+	<item name="title_social_info">
+		<value xml:lang="ko"><![CDATA[소셜 정보]]></value>
+		<value xml:lang="en"><![CDATA[Social information]]></value>
+		<value xml:lang="jp"><![CDATA[ソーシャル情報]]></value>
+		<value xml:lang="zh-TW"><![CDATA[社交資料]]></value>
+	</item>
+	<item name="about_social_info">
+		<value xml:lang="ko"><![CDATA[이곳의 설정은 사이트 전역 설정입니다. 로그인하는 시점에 이 설정이 적용되며 글이나 댓글을 작성하는 시점에 자유롭게 소셜 사이트 로그인이나 로그아웃을 할 수 있습니다.]]></value>
+		<value xml:lang="en"><![CDATA[In this part, you would set global settings for the site. This settings would be applied when you sign in this site, and you can easily sign in or out SNS on writing a document or comment.]]></value>
+		<value xml:lang="jp"><![CDATA[この設定はサイト全域設定です。ログインした時にこの設定が適用されて、ドキュメントとコメントを書く時、自由にソーシャルログインとかソーシャルログアウトする事ができます。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[在此可設定網站主要設定。 當您登入網站時將會套用該設定，並可輕鬆地登入或登出社交服務。]]></value>
+	</item>
+	<item name="title_social_login">
+		<value xml:lang="ko"><![CDATA[소셜 로그인]]></value>
+		<value xml:lang="en"><![CDATA[Social sign in]]></value>
+		<value xml:lang="jp"><![CDATA[ソーシャルログイン]]></value>
+		<value xml:lang="zh-TW"><![CDATA[社交登入]]></value>
+	</item>
+	<item name="about_social_login">
+		<value xml:lang="ko"><![CDATA[별도의 회원가입 절차 없이 소셜 사이트 중 하나의 아이디를 이용하여 로그인할 수 있습니다. 소셜 아이디로 로그인 시 아이디와 메일 등의 기본 정보는 이 사이트에 저장 되지만 비밀번호와 인증을 위한 처리는 해당 소셜 사이트에서 이루어집니다.]]></value>
+		<value xml:lang="en"><![CDATA[You can sign in this site without additional 'join in' process with SNS ID. If you sign in with SNS ID, this site would request basic data like e-mail address and save it on our server, but other information and SNS sign in steps would be handled by SNS site.]]></value>
+		<value xml:lang="jp"><![CDATA[別途の会員登録なく、ソーシャルIDでログイン出来ます。ソーシャルIDでログインした時ID、メールアドレスなど基本情報はこのサイトに保存されるが、パスワードとソーシャルID認証過程は別々のソーシャルサイトで処理されます。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[使用社交帳號登入不用再網站註冊帳號。 如果使用社交帳號登入，該站將會要求並儲存 E-mail等基本資料，但其他資料還是歸社交網站所管。]]></value>
+	</item>
+	<item name="cmd_unlink_social_info">
+		<value xml:lang="ko"><![CDATA[연결끊기]]></value>
+		<value xml:lang="en"><![CDATA[Disconnect]]></value>
+		<value xml:lang="jp"><![CDATA[デ−スコネックト]]></value>
+		<value xml:lang="zh-TW"><![CDATA[取消連線]]></value>
+	</item>
+	<item name="cmd_link_social_info">
+		<value xml:lang="ko"><![CDATA[연결하기]]></value>
+		<value xml:lang="en"><![CDATA[Connect]]></value>
+		<value xml:lang="jp"><![CDATA[コネクト]]></value>
+		<value xml:lang="zh-TW"><![CDATA[連線]]></value>
+	</item>
+	<item name="cmd_social_send_on">
+		<value xml:lang="ko"><![CDATA[전송하기]]></value>
+		<value xml:lang="en"><![CDATA[Post]]></value>
+		<value xml:lang="jp"><![CDATA[送信する]]></value>
+		<value xml:lang="zh-TW"><![CDATA[發表]]></value>
+	</item>
+	<item name="cmd_social_send_off">
+		<value xml:lang="ko"><![CDATA[전송끄기]]></value>
+		<value xml:lang="en"><![CDATA[Do not post]]></value>
+		<value xml:lang="jp"><![CDATA[送信しない]]></value>
+		<value xml:lang="zh-TW"><![CDATA[取消發表]]></value>
+	</item>
+	<item name="cmd_change_master_provider">
+		<value xml:lang="ko"><![CDATA[대표계정 변경]]></value>
+		<value xml:lang="en"><![CDATA[Change master SNS provider]]></value>
+		<value xml:lang="jp"><![CDATA[代表勘定変更]]></value>
+		<value xml:lang="zh-TW"><![CDATA[變更 SNS提供者]]></value>
+	</item>
+	<item name="cmd_setting">
+		<value xml:lang="ko"><![CDATA[환경설정]]></value>
+		<value xml:lang="en"><![CDATA[Configuration]]></value>
+		<value xml:lang="jp"><![CDATA[コンフィギュレーション]]></value>
+		<value xml:lang="zh-TW"><![CDATA[環境設定]]></value>
+	</item>
+	<item name="cmd_bitly">
+		<value xml:lang="ko"><![CDATA[bit.ly 통계]]></value>
+		<value xml:lang="en"><![CDATA[bit.ly statistics]]></value>
+		<value xml:lang="jp"><![CDATA[bit.ly統計]]></value>
+		<value xml:lang="zh-TW"><![CDATA[bit.ly 狀態]]></value>
+	</item>
+	<item name="cmd_delete_checked">
+		<value xml:lang="ko"><![CDATA[선택 항목 삭제]]></value>
+		<value xml:lang="en"><![CDATA[Delete selected item(s)]]></value>
+		<value xml:lang="jp"><![CDATA[選択項目削除]]></value>
+		<value xml:lang="zh-TW"><![CDATA[刪除所選]]></value>
+	</item>
+	<item name="set">
+		<value xml:lang="ko"><![CDATA[설정 됨]]></value>
+		<value xml:lang="en"><![CDATA[Set]]></value>
+		<value xml:lang="jp"><![CDATA[設定]]></value>
+		<value xml:lang="zh-TW"><![CDATA[設定]]></value>
+	</item>
+	<item name="not_set">
+		<value xml:lang="ko"><![CDATA[설정 안 됨]]></value>
+		<value xml:lang="en"><![CDATA[Not set]]></value>
+		<value xml:lang="jp"><![CDATA[未設定]]></value>
+		<value xml:lang="zh-TW"><![CDATA[不設定]]></value>
+	</item>
+	<item name="social_send">
+		<value xml:lang="ko"><![CDATA[글과 댓글을 전송합니다.]]></value>
+		<value xml:lang="en"><![CDATA[Send documents and comments to SNS.]]></value>
+		<value xml:lang="jp"><![CDATA[ドキュメントとコメントをソーシャルサービスと連動します。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[發送到社交網站]]></value>
+	</item>
+	<item name="social_not_send">
+		<value xml:lang="ko"><![CDATA[글과 댓글을 전송하지 않습니다.]]></value>
+		<value xml:lang="en"><![CDATA[Do not send documents and comments to SNS.]]></value>
+		<value xml:lang="jp"><![CDATA[ドキュメントとコメントをソーシャルサービスと連動しない。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[不發送到社交網站]]></value>
+	</item>
+	<item name="master_provider">
+		<value xml:lang="ko"><![CDATA[대표 계정]]></value>
+		<value xml:lang="en"><![CDATA[Master SNS provider]]></value>
+		<value xml:lang="jp"><![CDATA[代表勘定]]></value>
+		<value xml:lang="zh-TW"><![CDATA[SNS提供者]]></value>
+	</item>
+	<item name="bitly_summary">
+		<value xml:lang="ko"><![CDATA[bit.ly 통계 페이지]]></value>
+		<value xml:lang="en"><![CDATA[bit.ly statistics page]]></value>
+		<value xml:lang="jp"><![CDATA[bit.ly統計ページ]]></value>
+		<value xml:lang="zh-TW"><![CDATA[bit.ly 統計頁面]]></value>
+	</item>
+	<item name="bitly_info">
+		<value xml:lang="ko"><![CDATA[정보 페이지]]></value>
+		<value xml:lang="en"><![CDATA[bit.ly information page]]></value>
+		<value xml:lang="jp"><![CDATA[情報ページ]]></value>
+		<value xml:lang="zh-TW"><![CDATA[bit.ly 資訊頁面]]></value>
+	</item>
+	<item name="msg_login">
+		<value xml:lang="ko"><![CDATA[선택하신 서비스로 로그인 요청 중입니다.<br />잠시만 기다려주세요.]]></value>
+		<value xml:lang="en"><![CDATA[Sending request to selected SNS for sign in.<br />Please wait a moment.]]></value>
+		<value xml:lang="jp"><![CDATA[選択したサービスでログインしています。<br />暫くお待ちください。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[必須先登入您所選擇的服務。<br/>請稍後。]]></value>
+	</item>
+	<item name="msg_redirect">
+		<value xml:lang="ko"><![CDATA[오랫동안 응답이 없다면 이곳을 클릭하세요.]]></value>
+		<value xml:lang="en"><![CDATA[If your browser doesn't work for a long time, click here.]]></value>
+		<value xml:lang="jp"><![CDATA[長らくレスポンスが無ければここをクリックして下さい。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[如果您的瀏覽器長時間沒有響應，請按此。]]></value>
+	</item>
+	<item name="msg_request_error">
+		<value xml:lang="ko"><![CDATA[SocialXE 서버에 API 요청이 실패했습니다.]]></value>
+		<value xml:lang="en"><![CDATA[Fail to send SocialXE API request.]]></value>
+		<value xml:lang="jp"><![CDATA[SocialXEサーバへのAPIリクエストが失敗しました。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[SocialXE 主機 API請求失敗。]]></value>
+	</item>
+	<item name="msg_invalid_provider">
+		<value xml:lang="ko"><![CDATA[올바른 서비스 제공자가 아닙니다.]]></value>
+		<value xml:lang="en"><![CDATA[Invalid service provider.]]></value>
+		<value xml:lang="jp"><![CDATA[正しいサービスプロバイダーではありません。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[不正確的服務提供者。]]></value>
+	</item>
+	<item name="msg_invalid_request_client">
+		<value xml:lang="ko"><![CDATA[인증된 클라이언트가 아닙니다.]]></value>
+		<value xml:lang="en"><![CDATA[Uncertified client.]]></value>
+		<value xml:lang="jp"><![CDATA[認証されたクライアントではありません。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[客戶端未通過驗證。]]></value>
+	</item>
+	<item name="msg_invalid_request_domain">
+		<value xml:lang="ko"><![CDATA[사용이 허용된 도메인이 아닙니다.]]></value>
+		<value xml:lang="en"><![CDATA[Your domain is not allowed.]]></value>
+		<value xml:lang="jp"><![CDATA[使用が許容されたドメインではありません。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[不允許使用的域名。]]></value>
+	</item>
+	<item name="msg_send_failed">
+		<value xml:lang="ko"><![CDATA[%s에 전송이 실패했습니다. (%s)]]></value>
+		<value xml:lang="en"><![CDATA[Fail to send to %s. (%s)]]></value>
+		<value xml:lang="jp"><![CDATA[%sへの送信が失敗しました。(%s)]]></value>
+		<value xml:lang="zh-TW"><![CDATA[%s傳送失敗。 (%s)]]></value>
+	</item>
+	<item name="msg_not_allow_social_login">
+		<value xml:lang="ko"><![CDATA[소셜 로그인 기능을 사용하지 않고 있습니다.]]></value>
+		<value xml:lang="en"><![CDATA['Social sign in' is not activated.]]></value>
+		<value xml:lang="jp"><![CDATA[ソーシャルログイン機能を使っていないです。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[尚未啟用社交登入。]]></value>
+	</item>
+	<item name="msg_not_logged_social">
+		<value xml:lang="ko"><![CDATA[소셜 사이트에 로그인 되지 않았습니다.]]></value>
+		<value xml:lang="en"><![CDATA[You are not signed in on SNS.]]></value>
+		<value xml:lang="jp"><![CDATA[ソーシャルサイトにログインに成らなかったです。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[尚未登入社交服務。]]></value>
+	</item>
+	<item name="msg_not_use_social_info">
+		<value xml:lang="ko"><![CDATA[소셜 정보 통합 기능을 사용하고 있지 않습니다.]]></value>
+		<value xml:lang="en"><![CDATA[Social information integrating function is not activated.]]></value>
+		<value xml:lang="jp"><![CDATA[ソーシャル統合機能を使っていないです。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[尚未啟用社交資訊功能。]]></value>
+	</item>
+	<item name="msg_provider_id_exist">
+		<value xml:lang="ko"><![CDATA[해당 서비스의 아이디가 이미 다른 XE 아이디에 연결되어 있습니다.]]></value>
+		<value xml:lang="en"><![CDATA[The SNS ID is already linked to other XE ID(this site ID system).]]></value>
+		<value xml:lang="jp"><![CDATA[該当のサービスのIDがもうこのサイトの他のIDと連動されています。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[社交帳號已與 XE 帳號連結。(本站會員系統)]]></value>
+	</item>
+	<item name="msg_first_provider">
+		<value xml:lang="ko"><![CDATA[가입 시 사용한 서비스는 연결 해제할 수 없습니다.]]></value>
+		<value xml:lang="en"><![CDATA[You can not disconnect the provider you have used to joining in the membership.]]></value>
+		<value xml:lang="jp"><![CDATA[加入の時使ったサービスは連動解除が出来ません。]]></value>
+		<value xml:lang="zh-TW"><![CDATA[無法連線，您必須要先加入會員。]]></value>
+	</item>
+	<item name="server_settings">
+		<value xml:lang="ko"><![CDATA[서버 설정]]></value>
+		<value xml:lang="en"><![CDATA[Server Settings]]></value>
+	</item>
+	<item name="short_url_settings">
+		<value xml:lang="ko"><![CDATA[짧은 주소 설정]]></value>
+		<value xml:lang="en"><![CDATA[Short URL Settings]]></value>
+	</item>
+	<item name="service_settings">
+		<value xml:lang="ko"><![CDATA[서비스 설정]]></value>
+		<value xml:lang="en"><![CDATA[Service Settings]]></value>
+	</item>
+	<item name="provider" type="array">
+		<item name="xe">
+			<value xml:lang="ko"><![CDATA[XE]]></value>
+			<value xml:lang="en"><![CDATA[XE]]></value>
+		</item>
+		<item name="twitter">
+			<value xml:lang="ko"><![CDATA[트위터]]></value>
+			<value xml:lang="en"><![CDATA[Twitter]]></value>
+		</item>
+		<item name="me2day">
+			<value xml:lang="ko"><![CDATA[미투데이]]></value>
+			<value xml:lang="en"><![CDATA[Me2day]]></value>
+			<value xml:lang="zh-TW"><![CDATA[me2day]]></value>
+		</item>
+		<item name="facebook">
+			<value xml:lang="ko"><![CDATA[페이스북]]></value>
+			<value xml:lang="en"><![CDATA[Facebook]]></value>
+		</item>
+	</item>
+</lang>

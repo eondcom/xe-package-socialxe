@@ -1,0 +1,84 @@
+<include target="header.html" />
+
+<!--%import("filter/delete_checked.xml")-->
+
+<div class="link"><a href="http://bit.ly/a/summary" target="_blank">{$lang->bitly_summary}</a></div>
+
+<form id="fo_list" action="./" method="get" onsubmit="return procFilter(this, delete_checked)">
+<input type="hidden" name="page" value="{$page}" />
+
+<!-- 목록 -->
+<table class="x_table x_table-striped x_table-hover">
+<caption>Total {number_format($total_count)}, Page {number_format($page)}/{number_format($total_page)}</caption>
+<thead>
+	<tr>
+		<th scope="col">{$lang->no}</th>
+		<th scope="col" class="title">Links</th>
+		<th scope="col">{$lang->bitly_info}</th>
+		<th scope="col">Date</th>
+		<th scope="col"><input type="checkbox" onclick="XE.checkboxToggleAll(); return false;" /></th>
+	</tr>
+</thead>
+<tbody>
+	<!--@foreach($bitly_list as $no => $val)-->
+	<tr>
+		<td class="number center">{$no}</td>
+		<td class="left">{$val->title}, {$val->short_url}, <a href="{$val->url}" target="_blank">{$val->url}</a></td>
+		<td class="center"><a href="{$val->short_url}+" target="_blank">{$lang->bitly_info}</a></td>
+		<td class="date center nowrap">{(zdate($val->regdate,"Y-m-d\nH:i:s"))}</td>
+		<td class="center"><input type="checkbox" name="cart" value="{$val->bitly_srl}" /></td>
+	</tr>
+	<!--@end-->
+</tbody>
+</table>
+<div class="x_clearfix">
+	<div class="x_btn-group x_pull-right">
+		<button class="x_btn" type="submit">{$lang->cmd_delete_checked}</button>
+	</div>
+</div>
+
+</form>
+
+<div class="x_clearfix" style="margin-top:-10px">
+{@
+	$urlInfo = parse_url(getRequestUriByServerEnviroment());
+	parse_str($urlInfo['query'], $param);
+}
+	<form cond="$page_navigation" action="./" class="x_pagination x_pull-left" no-error-return-url="true">
+		<input loop="$param => $key, $val" cond="!in_array($key, array('mid', 'vid', 'act'))" type="hidden" name="{$key}" value="{$val}" />
+		<ul>
+			<li class="x_disabled"|cond="!$page || $page == 1"><a href="{getUrl('page', '')}">&laquo; {$lang->first_page}</a></li>
+			<block cond="$page_navigation->first_page != 1 && $page_navigation->first_page + $page_navigation->page_count > $page_navigation->last_page - 1 && $page_navigation->page_count != $page_navigation->total_page">
+				{@$isGoTo = true}
+				<li>
+					<a href="#goTo" data-toggle title="{$lang->cmd_go_to_page}">&hellip;</a>
+					<span cond="$isGoTo" id="goTo" class="x_input-append">
+						<input type="number" min="1" max="{$page_navigation->last_page}" required name="page" title="{$lang->cmd_go_to_page}" />
+						<button type="submit" class="x_add-on">Go</button>
+					</span>
+				</li>
+			</block>
+			<!--@while($page_no = $page_navigation->getNextPage())-->
+				{@$last_page = $page_no}
+				<li class="x_active"|cond="$page_no == $page"><a  href="{getUrl('page', $page_no)}">{$page_no}</a></li>
+			<!--@end-->
+			<block cond="$last_page != $page_navigation->last_page && $last_page + 1 != $page_navigation->last_page">
+				{@$isGoTo = true}
+				<li>
+					<a href="#goTo" data-toggle title="{$lang->cmd_go_to_page}">&hellip;</a>
+					<span cond="$isGoTo" id="goTo" class="x_input-append">
+						<input type="number" min="1" max="{$page_navigation->last_page}" required name="page" title="{$lang->cmd_go_to_page}" />
+						<button type="submit" class="x_add-on">Go</button>
+					</span>
+				</li>
+			</block>
+		<li class="x_disabled"|cond="$page == $page_navigation->last_page"><a href="{getUrl('page', $page_navigation->last_page)}" title="{$page_navigation->last_page}">{$lang->last_page} &raquo;</a></li>
+		</ul>
+	</form>
+	<form action="./" class="search x_input-append x_pull-right" no-error-return-url="true" cond="$act!=dispAutoinstallAdminInstalledPackages">
+		<input loop="$param => $key, $val" cond="!in_array($key, array('mid', 'vid', 'act', 'page'))" type="hidden" name="{$key}" value="{$val}" />
+		<input type="search" name="title" required title="Search" value="{htmlspecialchars($title)}">
+		<button class="x_btn x_btn-inverse" type="submit">{$lang->cmd_search}</button>
+		<a href="{getUrl('page', '', 'title', '')}" class="x_btn">{$lang->cmd_cancel}</a>
+	</form>
+</div>

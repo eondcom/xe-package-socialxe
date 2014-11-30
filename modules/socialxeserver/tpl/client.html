@@ -1,0 +1,88 @@
+<!--#include("./header.html")-->
+
+<!--%import("filter/delete_checked.xml")-->
+
+<!-- 목록 -->
+<table class="x_table x_table-striped x_table-hover">
+<caption>Total {number_format($total_count)}, Page {number_format($page)}/{number_format($total_page)}</caption>
+<thead>
+	<tr>
+		<th scope="col">{$lang->no}</th>
+		<th scope="col">{$lang->nick_name}</th>
+		<th scope="col" class="title">Client Token</th>
+		<th scope="col">{$lang->domain}</th>
+		<th>&nbsp;</th>
+		<th scope="col"><input type="checkbox" /></th>
+	</tr>
+</thead>
+<tbody>
+	<tr loop="$client_list => $no, $val">
+		<td>{$no}</td>
+		<td><a href="#popup_menu_area" class="member_{$val->member_srl}" onclick="return false">{$val->nick_name}</a></td>
+		<td>{$val->client_token}</td>
+		<td>
+			{@$domain_array = explode(',', $val->domain)}
+			<!--@foreach($domain_array as &$val2)-->
+				{@$val2 = trim($val2)}
+			<!--@end-->
+			{@$_domain = implode('<br />', $domain_array)}
+			{$_domain}
+		</td>
+		<td>
+			<a href="{getUrl('act','dispSocialxeserverAdminModifyClient','client_srl',$val->client_srl)}" class="x_icon-cog">{$lang->cmd_setup}</a>
+			<a href="#" onclick="doDeleteClient('{$val->client_srl}');return false;" title="{htmlspecialchars($lang->cmd_delete)}" class="x_icon-remove">{$lang->cmd_delete}</a>
+		</td>
+		<td><input type="checkbox" name="cart" value="{$val->client_srl}" /></td>
+	</tr>
+</tbody>
+</table>
+
+<div class="x_pull-right x_btn-group" style="position:relative;right:0;bottom:-10px">
+	<a href="{getUrl('act', 'dispSocialxeserverAdminInsertClient', 'client_srl', '')}" class="x_btn x_btn-inverse">{$lang->cmd_insert}</a>
+	<button type="submit" class="x_btn">{$lang->cmd_delete_checked}</button>
+</div>
+
+</form>
+
+{@
+	$urlInfo = parse_url(getRequestUriByServerEnviroment());
+	parse_str($urlInfo['query'], $param);
+}
+<form cond="$page_navigation" action="./" class="x_pagination x_pull-left" no-error-return-url="true">
+	<input loop="$param => $key, $val" cond="!in_array($key, array('mid', 'vid', 'act'))" type="hidden" name="{$key}" value="{$val}" />
+	<ul>
+		<li class="x_disabled"|cond="!$page || $page == 1"><a href="{getUrl('page', '')}">&laquo; {$lang->first_page}</a></li>
+		<block cond="$page_navigation->first_page != 1 && $page_navigation->first_page + $page_navigation->page_count > $page_navigation->last_page - 1 && $page_navigation->page_count != $page_navigation->total_page">
+			{@$isGoTo = true}
+			<li>
+				<a href="#goTo" data-toggle title="{$lang->cmd_go_to_page}">&hellip;</a>
+				<span cond="$isGoTo" id="goTo" class="x_input-append">
+					<input type="number" min="1" max="{$page_navigation->last_page}" required name="page" title="{$lang->cmd_go_to_page}" />
+					<button type="submit" class="x_add-on">Go</button>
+				</span>
+			</li>
+		</block>
+		<!--@while($page_no = $page_navigation->getNextPage())-->
+			{@$last_page = $page_no}
+			<li class="x_active"|cond="$page_no == $page"><a  href="{getUrl('page', $page_no)}">{$page_no}</a></li>
+		<!--@end-->
+		<block cond="$last_page != $page_navigation->last_page && $last_page + 1 != $page_navigation->last_page">
+			{@$isGoTo = true}
+			<li>
+				<a href="#goTo" data-toggle title="{$lang->cmd_go_to_page}">&hellip;</a>
+				<span cond="$isGoTo" id="goTo" class="x_input-append">
+					<input type="number" min="1" max="{$page_navigation->last_page}" required name="page" title="{$lang->cmd_go_to_page}" />
+					<button type="submit" class="x_add-on">Go</button>
+				</span>
+			</li>
+		</block>
+	<li class="x_disabled"|cond="$page == $page_navigation->last_page"><a href="{getUrl('page', $page_navigation->last_page)}" title="{$page_navigation->last_page}">{$lang->last_page} &raquo;</a></li>
+	</ul>
+</form>
+
+<form action="./" class="search x_input-append center" no-error-return-url="true" style="clear:both;margin-top:10px">
+	<input loop="$param => $key, $val" cond="!in_array($key, array('mid', 'vid', 'act', 'page'))" type="hidden" name="{$key}" value="{$val}" />
+	<input type="search" name="domain" required title="Search" value="{htmlspecialchars($domain)}">
+	<button class="x_btn x_btn-inverse" type="submit">{$lang->cmd_search}</button>
+	<a href="{getUrl('page', '', 'domain', '')}" class="x_btn">{$lang->cmd_cancel}</a>
+</form>

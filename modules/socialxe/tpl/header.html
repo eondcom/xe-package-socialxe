@@ -1,0 +1,17 @@
+<div class="x_page-header">
+	<h1>{$lang->socialxe}</h1>
+</div>
+{@
+	$validator_ids = array(
+		'modules/socialxe/tpl/index/1' => 1,
+	);
+}
+
+<div cond="$XE_VALIDATOR_MESSAGE && isset($validator_ids[$XE_VALIDATOR_ID])" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+	<p>{$XE_VALIDATOR_MESSAGE}</p>
+</div>
+
+<ul class="x_nav x_nav-tabs">
+	<li class="x_active"|cond="$act == 'dispSocialxeAdminConfig'"><a href="{getUrl('act', 'dispSocialxeAdminConfig')}">{$lang->cmd_setting}</a></li>
+	<li class="x_active"|cond="$act == 'dispSocialxeAdminBitly'"><a href="{getUrl('act', 'dispSocialxeAdminBitly')}">{$lang->cmd_bitly}</a></li>
+</ul>

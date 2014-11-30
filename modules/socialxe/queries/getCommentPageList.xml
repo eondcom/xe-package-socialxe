@@ -1,0 +1,33 @@
+<query id="getCommentPageList" action="select">
+	<tables>
+		<table name="comments" alias="comments" />
+		<table name="comments_list" alias="comments_list" type="left join">
+			<conditions>
+				<condition operation="equal" column="comments_list.comment_srl" var="comments.comment_srl" filter="number" pipe="and" />
+			</conditions>
+		</table>
+		<table name="socialxe" alias="socialxe" type="left join" >
+			<conditions>
+				<condition operation="equal" column="socialxe.comment_srl" var="comments.comment_srl" filter="number" />
+			</conditions>
+		</table>
+	</tables>
+	<columns>
+		<column name="comments.*" />
+		<column name="socialxe.*" />
+		<column name="comments_list.depth" alias="depth" />
+		<column name="comments.comment_srl" alias="comment_srl" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="comments.document_srl" var="document_srl" notnull="notnull" pipe="and" />
+		<condition operation="more" column="comments_list.head" default="0" pipe="and" />
+		<condition operation="more" column="comments_list.arrange" default="0" pipe="and" />
+		<condition operation="below" column="comments.comment_srl" var="last_comment_srl" pipe="and"  />
+		<condition operation="equal" column="comments_list.depth" default="0" pipe="and"  />
+	</conditions>
+	<navigation>
+		<index var="list_order" default="comments_list.head" order="desc" />
+		<index var="list_order" default="comments_list.arrange" order="asc" />
+		<list_count var="list_count" default="10" />
+	</navigation>
+</query>

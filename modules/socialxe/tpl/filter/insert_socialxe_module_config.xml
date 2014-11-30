@@ -1,0 +1,7 @@
+<filter name="insert_socialxe_module_config" module="socialxe" act="procSocialxeAdminInsertModuleConfig" confirm_msg_code="confirm_submit">
+	<form />
+	<response>
+		<tag name="error" />
+		<tag name="message" />
+	</response>
+</filter>

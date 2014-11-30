@@ -1,0 +1,72 @@
+<!--#include($member_skin_header)-->
+<!--%import("css/style.css")-->
+<!--%import("js/socialxe.js")-->
+
+<div class="socialxe_info">
+	<h3>{$lang->title_social_info}</h3>
+	<!--@if($member_info->member_srl == $logged_info->member_srl)-->
+		<p class="about">{$lang->about_social_info}</p>
+	<!--@end-->
+
+	<ul class="socialxe_info">
+	{@ $i=0; }
+	<!--@foreach($member_social_info as $provider => $val)--><!--@if($provider != 'xe')-->
+		<li class="provider"><h4><img src="./images/{$provider}.png" class="iePngFix" width="24" height="24" alt="{$lang->provider[$provider]}"  title="" style="vertical-align: middle;" /> {$lang->provider[$provider]}</h4>
+			<ul>
+				<li>
+					<!--@if($val)-->
+					{@ $i=1; }
+						<!--@if($master_provider == $provider)-->
+							{$lang->master_provider}
+						<!--@end-->
+						{$lang->set}
+						(<a href="{$val['link']}" target="_blank">{$val['nick_name']}</a>)
+					<!--@else-->
+						<span class="not_use">{$lang->not_set}</span>
+					<!--@end-->
+				</li>
+				<!--@if($member_info->member_srl == $logged_info->member_srl)-->
+				<!--@if($val)-->
+				<li>
+						<!--@if($val['send'] == 'Y')-->
+							{$lang->social_send}
+						<!--@else-->
+							<span class="not_use">{$lang->social_not_send}</span>
+						<!--@end-->
+				</li>
+				<li class="cmd">
+						<!--@if($val['send'] == 'Y')-->
+							<a href="#" onclick="setSend('{$provider}', 'N'); return false;" class="button red"><span>{$lang->cmd_social_send_off}</span></a>
+						<!--@else-->
+							<a href="#" onclick="setSend('{$provider}', 'Y'); return false;" class="button"><span>{$lang->cmd_social_send_on}</span></a>
+						<!--@end-->
+				</li>
+				<!--@end-->
+				<li class="cmd">
+					<!--@if($val)-->
+						<!--@if($provider != $first_provider)-->
+							<a href="#" onclick="unlinkSocialInfo('{$provider}'); return false;" class="button red"><span>{$lang->cmd_unlink_social_info}</span></a>
+						<!--@else-->
+							&nbsp;
+						<!--@end-->
+					<!--@else-->
+						<a href="{getUrl('', 'mid', $mid, 'module', 'socialxe', 'act', 'dispSocialxeLogin', 'provider', $provider, 'mode', 'linkSocialInfo', 'query', urlencode('mid=' . $mid . '&act=' . $act))}" onclick="providerLogin(this.href); return false;" class="button"><span>{$lang->cmd_link_social_info}</span></a>
+					<!--@end-->
+				</li>
+				<!--@end-->
+			</ul>
+		</li>
+	<!--@end--><!--@end-->
+	</ul>
+
+	<!--@if($member_info->member_srl == $logged_info->member_srl && $i == 1)-->
+	<select id="master_provider">
+		<!--@foreach($member_social_info as $provider => $val)--><!--@if($val)-->
+		<option value="{$provider}" <!--@if($provider == $master_provider)-->selected="selected"<!--@end-->>{$lang->provider[$provider]}</option>
+		<!--@end--><!--@end-->
+	</select>
+	<a href="#" onclick="changeMasterProvider(); return false;" class="button green"><span>{$lang->cmd_change_master_provider}</span></a>
+	<!--@end-->
+</div>
+
+<!--#include($member_skin_footer)-->

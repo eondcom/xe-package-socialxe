@@ -1,0 +1,12 @@
+<query id="getMemberBySocialId" action="select">
+	<tables>
+		<table name="socialxe_info" />
+	</tables>
+	<columns>
+		<column name="*" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="provider" var="provider" pipe="and" notnull="notnull" />
+		<condition operation="equal" column="id" var="id" pipe="and" notnull="notnull" />
+	</conditions>
+</query>

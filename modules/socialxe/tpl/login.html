@@ -1,0 +1,26 @@
+<!--//window.location.href='{$url}'; -->
+<!--%import("js/submit_login.js")-->
+
+<!--%import("css/style.css")-->
+<div id="wrapper" class="wide">
+	<h1 class="wide pcbg">{$lang->socialxe}</h1>
+	<div id="login_info" class="pcbg">
+		<p>{$lang->msg_login} <img src="./images/spinner.gif" alt="{$lang->msg_call_server}" /></p>
+		<p><a href="{$url}">{$lang->msg_redirect}</a></p>
+	</div>
+</div>
+<!--//
+	meta reflash, window.location 모두 리퍼러에 문제가 있다 ㅡㅡ
+	좋은 방법은 아니지만... 어차피 이 페이지는 JS를 사용할 때 사용되니까...
+-->
+<form id="move" action="./"  no-error-return-url="true">
+	<input type="hidden" name="act" value="{$act}" />
+	<input type="hidden" name="module" value="{$module}" />
+	<input type="hidden" name="provider" value="{$provider}" />
+	<input type="hidden" name="mode" value="{$mode}" />
+	<input type="hidden" name="js2" value="1" />
+	<input type="hidden" name="info" value="{$info}" />
+	<input type="hidden" name="query" value="{$query}" />
+	<input type="hidden" name="mid" value="{$mid}" />
+	<input type="hidden" name="vid" value="{$vid}" />
+</form>

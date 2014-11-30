@@ -1,0 +1,100 @@
+<!--#include("./header.html")-->
+<!--%import("filter/update_service.xml")-->
+<form class="x_form-horizontal" action="./" method="post" onsubmit="return procFilter(this, update_service)" enctype="multipart/form-data">
+	<div class="x_control-group">
+		<label class="x_control-label" for="service_id">{$lang->mid}</label>
+		<div class="x_controls">
+			<input type="text" name="service_id" id="service_id" value="{$service_module_info->mid}" />
+			<p class="x_help-block">{$lang->about_mid}</p>
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="module_category_srl">{$lang->module_category}</label>
+		<div class="x_controls">
+			<select name="module_category_srl" id="module_category_srl">
+				<option value="0">{$lang->notuse}</option>
+				<option loop="$module_category => $key, $val" value="{$key}" selected="selected"|cond="$service_module_info->module_category_srl == $key">{$val->title}</option>
+			</select>
+			<p class="x_help-block">{$lang->about_module_category}</p>
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="lang_browser_title">{$lang->browser_title}</label>
+		<div class="x_controls">
+			<input type="text" name="browser_title" id="browser_title" value="{htmlspecialchars($service_module_info->browser_title)}" class="lang_code" />
+			<p class="x_help-block">{$lang->about_browser_title}</p>
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="layout_srl">{$lang->layout}</label>
+		<div class="x_controls">
+			<select name="layout_srl" id="layout_srl">
+				<option value="0">{$lang->notuse}</option>
+				<option loop="$layout_list => $key, $val" value="{$val->layout_srl}" selected="selected"|cond="$service_module_info->layout_srl == $key->layout_srl">{$val->title} ({$val->layout})</option>
+			</select>
+			<p class="x_help-block">{$lang->about_layout}</p>
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="skin">{$lang->skin}</label>
+		<div class="x_controls">
+			<select name="skin" id="skin">
+				<option loop="$skin_list => $key, $val" value="{$key}" selected="selected"|cond="$service_module_info->skin==$key ||(!$module_info->skin && $key=='default')">{$val->title} ({$val->layout})</option>
+			</select>
+			<p class="x_help-block">{$lang->about_layout}</p>
+		</div>
+	</div>
+	<div class="x_control-group">
+		<div class="x_control-label">{$lang->mobile_view}</div>
+		<div class="x_controls">
+			<label for="use_mobile" class="x_inline">
+				<input type="checkbox" name="use_mobile" id="use_mobile" value="Y" checked="checked"|cond="$service_module_info->use_mobile == 'Y'" />
+				{$lang->about_mobile_view}
+			</label>
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="mlayout_srl">{$lang->mobile_layout}</label>
+		<div class="x_controls">
+			<select name="mlayout_srl" id="mlayout_srl">
+				<option value="0">{$lang->notuse}</option>
+				<option loop="$mlayout_list => $key, $val" value="{$val->layout_srl}" selected="selected"|cond="$service_module_info->mlayout_srl==$val->layout_srl">{$val->title} ({$val->layout})</option>
+			</select>
+			<p class="x_help-block">{$lang->about_layout}</p>
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="mskin">{$lang->mobile_skin}</label>
+		<div class="x_controls">
+			<select name="mskin" id="mskin">
+				<option value="0">{$lang->notuse}</option>
+				<option loop="$mskin_list => $key, $val" value="{$key}" selected="selected"|cond="$service_module_info->mskin==$key || (!$service_module_info->mskin && $key=='default')">{$val->title}</option>
+			</select>
+			<p class="x_help-block">{$lang->about_skin}</p>
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="description">{$lang->description}</label>
+		<div class="x_controls">
+			<textarea name="description" id="description">{htmlspecialchars($service_module_info->description)}</textarea>
+			<p class="x_help-block">{$lang->about_description}</p>
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="lang_header_text">{$lang->header_text}</label>
+		<div class="x_controls">
+			<textarea name="header_text" id="header_text" class="lang_code">{htmlspecialchars($service_module_info->header_text)}</textarea>
+			<p class="x_help-block">{$lang->about_header_text}</p>
+		</div>
+	</div>
+	<div class="x_control-group">
+		<label class="x_control-label" for="lang_footer_text">{$lang->footer_text}</label>
+		<div class="x_controls">
+			<textarea name="footer_text" id="footer_text" class="lang_code">{htmlspecialchars($service_module_info->footer_text)}</textarea>
+			<p class="x_help-block">{$lang->about_footer_text}</p>
+		</div>
+	</div>
+	<div class="btnArea">
+		<button type="submit" class="x_btn x_btn-primary">{$lang->cmd_registration}</button>
+	</div>
+</form>

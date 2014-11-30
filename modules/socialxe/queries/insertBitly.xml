@@ -1,0 +1,12 @@
+<query id="insertBitly" action="insert">
+	<tables>
+		<table name="socialxe_bitly" />
+	</tables>
+	<columns>
+		<column name="hash" var="hash" notnull="notnull" />
+		<column name="title" var="title" />
+		<column name="short_url" var="short_url" notnull="notnull" />
+		<column name="url" var="url" notnull="notnull" />
+		<column name="regdate" default="curdate()" />
+	</columns>
+</query>

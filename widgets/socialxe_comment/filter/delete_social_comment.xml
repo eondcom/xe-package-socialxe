@@ -1,0 +1,12 @@
+<filter name="delete_social_comment" module="socialxe" act="procSocialxeDeleteComment" confirm_msg_code="confirm_delete">
+	<form>
+		<node target="comment_srl" required="true" />
+	</form>
+	<response callback_func="completeDeleteSocialComment">
+		<tag name="skin" />
+		<tag name="document_srl" />
+		<tag name="list_count" />
+		<tag name="content_link" />
+		<tag name="comment_srl" />
+	</response>
+</filter>

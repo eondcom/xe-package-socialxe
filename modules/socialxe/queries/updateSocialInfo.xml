@@ -1,0 +1,14 @@
+<query id="updateSocialInfo" action="update">
+	<tables>
+		<table name="socialxe_info" />
+	</tables>
+	<columns>
+		<column name="id" var="id" />
+		<column name="nick_name" var="nick_name" />
+		<column name="access" var="access" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="member_srl" var="member_srl" notnull="notnull" pipe="and" filter="number" />
+		<condition operation="equal" column="provider" var="provider" notnull="notnull" pipe="and" />
+	</conditions>
+</query>

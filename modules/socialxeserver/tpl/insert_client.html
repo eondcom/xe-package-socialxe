@@ -1,0 +1,16 @@
+<!--#include("./header.html")-->
+
+<!--%import("filter/insert_client.xml")-->
+
+<form class="x_form-horizontal" action="./" method="get" onsubmit="return procFilter(this, insert_client)">
+	<div class="x_control-group">
+		<label for="domain" class="x_control-label">{$lang->domain}</label>
+		<div class="x_controls">
+			<input type="text" name="domain" id="domain" value="{htmlspecialchars($client->domain)}" />
+			<p class="x_help-block">{$lang->about_client_domain}</p>
+		</div>
+	</div>
+	<div class="btnArea">
+		<button type="submit" class="x_btn x_btn-primary">{$lang->cmd_registration}</button>
+	</div>
+</form>

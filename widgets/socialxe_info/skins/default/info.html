@@ -1,0 +1,28 @@
+<!--@if(class_exists(Mobile) && Mobile::isFromMobilePhone())-->
+{@ Context::addJsFile("./common/js/jquery.js", true, '', -100005) }
+{@ Context::addJsFile("./common/js/common.js", true, '', -100004) }
+{@ Context::addJsFile("./common/js/js_app.js", true, '', -100003) }
+{@ Context::addJsFile("./common/js/xml_handler.js", true, '', -100002) }
+{@ Context::addJsFile("./common/js/xml_js_filter.js", true, '', -100001) }
+<!--@end-->
+
+<!--%import("css/style.css")-->
+<!--%import("js/socialxe.js")-->
+<!--@if($colorset == "black")-->
+	<!--%import("css/style.black.css")-->
+<!--@end-->
+
+<div class="socialxe_info">
+		<!--#include("_info.html")-->
+</div>
+
+<script type="text/javascript">
+<!--
+	<!--// 로그인 키가 없으면 소셜XE 서버에서 받아 오도록 한다 -->
+	<!--@if(!$auto_login_key)-->
+	getInfoAutoLoginKey('{$auto_login_key_url}', '{$skin}');
+	<!--@end-->
+
+	var socialxe_info_skin = '{$skin}';
+-->
+</script>

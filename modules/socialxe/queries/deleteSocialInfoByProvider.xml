@@ -1,0 +1,9 @@
+<query id="deleteSocialInfoByProvider" action="delete">
+	<tables>
+		<table name="socialxe_info" />
+	</tables>
+	<conditions>
+		<condition operation="equal" column="member_srl" var="member_srl" notnull="notnull" filter="number" />
+		<condition operation="equal" column="provider" var="provider" notnull="notnull" pipe="and" />
+	</conditions>
+</query>

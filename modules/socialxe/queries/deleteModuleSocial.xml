@@ -1,0 +1,8 @@
+<query id="deleteModuleSocial" action="delete">
+    <tables>
+        <table name="socialxe" />
+    </tables>
+    <conditions>
+        <condition operation="equal" column="module_srl" var="module_srl" notnull="notnull" filter="number" />
+    </conditions>
+</query>

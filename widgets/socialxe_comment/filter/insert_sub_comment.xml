@@ -1,0 +1,15 @@
+<filter name="insert_sub_comment" module="socialxe" act="procSocialxeInsertComment">
+	<form>
+		<node target="document_srl" required="true" />
+		<node target="comment_srl" required="true" />
+		<node target="content" required="true" minlength="1" />
+		<node target="skin" required="true" />
+	</form>
+	<response callback_func="completeInsertSubComment">
+		<tag name="msg" />
+		<tag name="skin" />
+		<tag name="comment_srl" />
+		<tag name="document_srl" />
+		<tag name="content_link" />
+	</response>
+</filter>

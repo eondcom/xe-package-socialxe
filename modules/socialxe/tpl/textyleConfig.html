@@ -1,0 +1,64 @@
+<!--%import("filter/insert_config.xml")-->
+<!-- Content -->
+<div id="content">
+
+	<!-- contentHeader -->
+	<div class="contentHeader setupHeader lineBottom">
+		<h3 class="h3">{$lang->socialxe} {$lang->cmd_management}</h3>
+	</div>
+	<!-- /contentHeader -->
+
+	<div class="setUp">
+		<form action="./" method="get" onsubmit="return procFilter(this, insert_config)">
+		<!--@if (!$config->use_default)-->
+		<fieldset>
+			<h4 class="h4">{$lang->server_hostname}</h4>
+			<input type="text" name="server_hostname" value="{htmlspecialchars($config->server_hostname?$config->server_hostname:'socialxe.net')}" class="inputText w400" />
+			<p>{$lang->about_server_hostname}</p>
+		</fieldset>
+
+		<fieldset>
+			<h4 class="h4">{$lang->server_query}</h4>
+			<input type="text" name="server_query" value="{htmlspecialchars($config->server_query?$config->server_query:'/?module=socialxeserver&act=procSocialxeserverAPI')}" class="inputText w400"/>
+			<p>{$lang->about_server_query}</p>
+		</fieldset>
+
+		<fieldset>
+			<h4 class="h4">{$lang->client_token}</h4>
+			<input type="text" name="client_token" value="{htmlspecialchars($config->client_token)}" class="inputText w400"/>
+			<p>{$lang->about_client_token}</p>
+		</fieldset>
+		<!--@end-->
+
+		<fieldset>
+			<h4 class="h4">{$lang->hashtag}</h4>
+			<input type="text" name="hashtag" value="{htmlspecialchars($config->hashtag)}" class="inputText w100"/>
+			<p>{$lang->about_hashtag}</p>
+		</fieldset>
+
+		<fieldset>
+			<h4 class="h4">{$lang->use_ssl}</h4>
+			<input type="checkbox" name="use_ssl" value="Y" <!--@if($config->use_ssl=='Y')-->checked="checked"<!--@end-->/>
+				<p>{$lang->about_use_ssl}</p>
+		</fieldset>
+
+		<fieldset>
+			<h4 class="h4">{$lang->select_service}</h4>
+			<!--@foreach($provider_list as $provider)-->
+				<label><input type="checkbox" name="select_service_{$provider}" value="Y" <!--@if($config->select_service[$provider]=='Y')-->checked="checked"<!--@end-->/> {$lang->provider[$provider]}</label>
+			<!--@end-->
+		</fieldset>
+
+		<fieldset>
+			<h4 class="h4">{$lang->use_social_info}</h4>
+			<input type="checkbox" name="use_social_info" value="Y" <!--@if($config->use_social_info=='Y')-->checked="checked"<!--@end-->/>
+			<p>{$lang->about_use_social_info}</p>
+		</fieldset>
+
+		<div class="buttonArea">
+			<span class="buttonAction actionBlue"><input type="submit" value="{$lang->cmd_apply}" /></span>
+		</div>
+
+		</form>
+	</div>
+</div>

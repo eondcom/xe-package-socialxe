@@ -1,0 +1,92 @@
+		<fieldset class="socialxe_service">
+		<legend>{$lang->select_service}</legend>
+			<ul>
+				<!--@foreach($provider_list as $provider)-->
+				<li>
+					<!--@if ($provider_is_logged[$provider])-->
+						<!--@if ($provider != 'xe')-->
+							<a href="{getUrl('', 'mid', $mid, 'module', 'socialxe', 'act', 'dispSocialxeLogout', 'provider', $provider, 'query', $query)}" onclick="providerLogout('{$provider}', '{$skin}'); return false;">
+						<!--@else-->
+							<a href="{getUrl('', 'vid', $vid, 'mid', $mid, 'document_srl', $_document_srl, 'act', 'dispMemberLogout')}">
+						<!--@end-->
+						<img width="24" height="24" src="./images/{$provider}_on.png" title="{$lang->provider[$provider]}({$nick_names[$provider]}) {$lang->cmd_logout}" alt="{$lang->provider[$provider]}({$nick_names[$provider]}) {$lang->cmd_logout}" class="iePngFix"/>
+						</a>
+					<!--@else-->
+						<!--@if ($provider != 'xe')-->
+							<a href="{getUrl('', 'mid', $mid, 'module', 'socialxe', 'act', 'dispSocialxeLogin', 'provider', $provider, 'query', $query)}" onclick="providerLogin(this.href, '{$skin}'); return false;">
+						<!--@else-->
+							<a href="{getUrl('', 'vid', $vid, 'mid', $mid, 'document_srl', $_document_srl, 'act', 'dispMemberLoginForm')}">
+						<!--@end-->
+						<img width="24" height="24" src="./images/{$provider}_off.png" title="{$lang->provider[$provider]} {$lang->cmd_login}" alt="{$lang->provider[$provider]} {$lang->cmd_login}" class="iePngFix"/>
+						</a>
+					<!--@end-->
+				</li>
+				<!--@end-->
+			</ul>
+		</fieldset>
+
+		<fieldset class="socialxe_input">
+		<legend>{$lang->cmd_reply}</legend>
+			<div class="socialxe_name">
+				<!--@if($nick_name)-->
+					<img width="15" height="15" src="./images/{$master_provider}_small.png" alt="{$lang->provider[$master_provider]}" class="iePngFix"/> {$nick_name}
+					<!--@if($slave_provider)-->
+						(<img width="15" height="15" src="./images/{$slave_provider}_small.png" alt="{$lang->provider[$slave_provider]}" class="iePngFix"/> {$slave_nick_name})
+					<!--@end-->
+					<!--@if(in_array('xe', $logged_provider))-->
+						{@$logged_count-=1;}
+					<!--@end-->
+					<!--@if($logged_count > 1)-->
+						<a href="#" onclick="return false;" class="socialxe_master_change">{$lang->cmd_master}</a>
+						<span class="socialxe_master_change_list">
+							<!--@foreach($logged_provider as $provider)--><!--@if($provider!='xe')-->
+							<a href="#" onclick="changeMaster('{$provider}', '{$skin}'); return false;" style="cursor:pointer;">{$lang->provider[$provider]}</a>
+							<!--@end--><!--@end-->
+						</span>
+						<script type="text/javascript">
+						<!--
+							// 대표 계정 리스트 숨기기
+							jQuery(".socialxe_master_change_list").hide();
+
+							// 대표 계정 변경 누르면 리스트 토글
+							jQuery(".socialxe_master_change").bind("click", function(e){
+								jQuery(".socialxe_master_change_list").toggle();
+								return false;
+							});
+						-->
+						</script>
+					<!--@end-->
+				<!--@else-->
+					{$lang->msg_login}
+				<!--@end-->
+			</div>
+
+			<div class="socialxe_wrap">
+				<div class="socialxe_left">
+					<!--@if($profile_image)-->
+						<div class="socialxe_profile_image"><img src="{$profile_image}" alt="profile image" class="iePngFix"/></div>
+					<!--@else-->
+						<div class="socialxe_profile_image"><img src="./images/anonymous.png" alt="profile image" /></div>
+					<!--@end-->
+
+					<div class="socialxe_content_input">
+						<!--// IE6 textarea width 100% 버그 fix -->
+						<fieldset><div>
+						<textarea name="content" id="socialxe_main_content" class="socialxe_resizable" rows="3" cols="50" <!--@if(!$nick_name)-->disabled="disabled"<!--@end-->>{$_COOKIE["socialxe_content"]}</textarea>
+						</div></fieldset>
+					</div>
+				</div>
+				<div class="socialxe_submit"><input type="submit" value="{$lang->cmd_submit}" /></div>
+			</div>
+		</fieldset>
+
+		<div class="socialxe_poweredby">
+			<a href="http://socialxe.net/" target="_blank"><img src="./images/poweredby.png" alt="powered by SocialXE" class="iePngFix"/></a>
+		</div>
+		<!--@if($enter_send == 'Y')-->
+		<script type="text/javascript">
+		<!--
+			enterSend();
+		-->
+		</script>
+		<!--@end-->

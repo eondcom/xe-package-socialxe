@@ -1,0 +1,11 @@
+<!--%import("css/style.css")-->
+
+<div class="socialxe_login">
+	<h3>{$lang->title_social_login}</h3>
+	<ul>
+	<!--@foreach($provider_list as $provider)--><!--@if($provider != 'xe')-->
+		<li><a href="{getSiteUrl($domain,'', 'mid', $mid, 'vid', $vid, 'act', 'dispSocialxeLogin', 'provider', $provider, 'mode', 'socialLogin', 'query', getNotEncodedFullUrl('', 'mid', $mid))}" class="loginButton"><img src="./images/{$provider}.png" class="iePngFix" width="24" height="24" alt="" /> {$lang->provider[$provider]} {$lang->cmd_login}</a></li>
+	<!--@end--><!--@end-->
+	</ul>
+	<p>{$lang->about_social_login}</p>
+</div>

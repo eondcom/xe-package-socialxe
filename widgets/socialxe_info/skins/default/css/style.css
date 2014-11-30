@@ -1,0 +1,35 @@
+.socialxe_info fieldset{ border:0; clear:both;}
+.socialxe_info fieldset:after{ content:""; display:block; float:none; clear:both;}
+.socialxe_info legend { position:absolute; width:0; height:0; overflow:hidden; font:0/0 Sans-serif; visibility:hidden;}
+
+.socialxe_info { position: relative; border: 0px solid #ddd; }
+.socialxe_info .socialxe_poweredby { position: absolute; top: 3px; right: 10px; }
+
+.socialxe_info .socialxe_service { margin: 0 0 5px; padding: 0 60px 0 0; }
+.socialxe_info ul { float: left; margin: 0; padding: 0; list-style: none; }
+.socialxe_info .socialxe_service li { float: left; margin: 0 5px 0 0; padding: 0; border: 0; }
+.socialxe_info .socialxe_name { font-weight: bold; margin-bottom: 10px; }
+.socialxe_info .socialxe_name img { vertical-align: middle; }
+.socialxe_info .socialxe_name .socialxe_master_change_info,
+.socialxe_info .socialxe_name .socialxe_master_change_list_info { font-weight: normal; font-size: 90%; cursor: pointer; color: black; text-decoration: none;}
+.socialxe_info .socialxe_name .socialxe_master_change_list_info a { color: black; text-decoration: none;}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.socialxe_info .socialxe_service li img { width: 32px; height: 32px; }
+	.socialxe_info .socialxe_service li { margin-right: 10px; }
+	.socialxe_info_button,
+	.socialxe_info .socialxe_name .socialxe_master_change_info,
+	.socialxe_info .socialxe_name .socialxe_master_change_list_info span { display: inline-block; padding: 5px; border: 1px solid #ccc; margin: 5px 0; }
+	a.socialxe_info_button { text-decoration: none; color: inherit; }
+}
+
+/* IE6 css fixer v0.95: Thu, 30 Dec 2010 03:08:58 +0100 */
+
+/* ============================================= */
+/* safe settings                                 */
+
+/* add display:inline to floated elements */
+.socialxe_info .socialxe_service li {display:inline;}
+
+/* add zoom:1 to overflow:hidden */
+.socialxe_info legend {zoom:1;}

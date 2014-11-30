@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<grants />
+	<permissions>
+		<permission action="dispSocialxeTextyleTool" target="manager" />
+	</permissions>
+	<actions>
+		<action name="dispSocialxeAdminConfig" type="view" standalone="true" menu_name="socialxe" />
+		<action name="dispSocialxeAdminBitly" type="view" admin_index="true" standalone="true" menu_name="socialxe" menu_index="true" />
+
+		<action name="procSocialxeAdminInsertConfig" type="controller" standalone="true" />
+		<action name="procSocialxeAdminInsertModuleConfig" type="controller" standalone="true" />
+		<action name="procSocialxeAdminDeleteChecked" type="controller" standalone="true" />
+
+		<action name="procSocialxeCompileInput" type="controller" standalone="true" />
+		<action name="procSocialxeCompileList" type="controller" standalone="true" />
+		<action name="procSocialxeCompileSubList" type="controller" standalone="true" />
+		<action name="procSocialxeInsertComment" type="controller" standalone="true" />
+		<action name="procSocialxeDeleteComment" type="controller" standalone="true" />
+		<action name="procSocialxeChangeMaster" type="controller" standalone="true" />
+		<action name="procSocialxeSetAutoLoginKey" type="controller" standalone="true" />
+		<action name="procSocialxeLoginInsert" type="controller" standalone="true" />
+		<action name="procSocialxeUnlinkSocialInfo" type="controller" standalone="true" />
+		<action name="procSocialxeSetSend" type="controller" standalone="true" />
+		<action name="procSocialxeChangeMasterProvider" type="controller" standalone="true" />
+		<action name="procSocialxeCompileInfo" type="controller" standalone="true" />
+		<action name="procSocialxeResetSocialInfo" type="controller" standalone="true" />
+
+		<action name="dispSocialxeLogin" type="view" standalone="true" />
+		<action name="dispSocialxeCallback" type="view" standalone="true" />
+		<action name="dispSocialxeLogout" type="view" standalone="true" />
+		<action name="dispSocialxeTextyleTool" type="view" />
+		<action name="dispSocialxeLoginForm" type="view" standalone="true" />
+		<action name="dispSocialxeLoginAdditional" type="view" standalone="true" />
+		<action name="dispSocialxeSocialInfo" type="view" standalone="true" />
+	</actions>
+	<menus>
+		<menu name="socialxe" type="all">
+			<title xml:lang="ko">SocialXE</title>
+		</menu>
+	</menus>
+</module>

@@ -1,0 +1,9 @@
+<query id="insertTextylePostSubscriptionSocialInfo" action="insert">
+	<tables>
+		<table name="socialxe_subscription" />
+	</tables>
+	<columns>
+		<column name="document_srl" var="document_srl" notnull="notnull" filter="number" />
+		<column name="config" var="config" />
+	</columns>
+</query>

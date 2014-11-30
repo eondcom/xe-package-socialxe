@@ -1,0 +1,8 @@
+<query id="deleteBitly" action="delete">
+	<tables>
+		<table name="socialxe_bitly" />
+	</tables>
+	<conditions>
+		<condition operation="in" column="bitly_srl" var="bitly_srls" notnull="notnull" />
+	</conditions>
+</query>

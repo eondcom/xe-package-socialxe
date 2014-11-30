@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<grants>
+		<grant name="register" default="member">
+			<title xml:lang="ko">클라이언트 등록</title>
+			<title xml:lang="zh-TW">客戶端註冊</title>
+			<title xml:lang="en">Client register</title>
+		</grant>
+	</grants>
+	<permissions>
+		<permission action="dispSocialxeserverClientList" target="member" />
+		<permission action="dispSocialxeserverInsertClient" target="member" />
+		<permission action="dispSocialxeserverModifyClient" target="member" />
+		<permission action="procSocialxeserverInsertClient" target="member" />
+		<permission action="procSocialxeserverDeleteCheckedClient" target="member" />
+	</permissions>
+	<actions>
+		<action name="dispSocialxeserverAdminConfig" type="view" standalone="true" menu_name="socialxeserver" />
+		<action name="dispSocialxeserverAdminClient" type="view" admin_index="true" standalone="true" menu_name="socialxeserver" menu_index="true" />
+		<action name="dispSocialxeserverAdminInsertClient" type="view" standalone="true" menu_name="socialxeserver" />
+		<action name="dispSocialxeserverAdminModifyClient" type="view" standalone="true" menu_name="socialxeserver" />
+		<action name="dispSocialxeserverAdminServiceConfig" type="view" standalone="true" menu_name="socialxeserver" />
+		<action name="dispSocialxeserverAdminServiceGrant" type="view" menu_name="socialxeserver" />
+
+		<action name="procSocialxeserverAdminInsertConfig" type="controller" standalone="true" />
+		<action name="procSocialxeserverAdminInsertClient" type="controller" standalone="true" />
+		<action name="procSocialxeserverAdminDeleteCheckedClient" type="controller" standalone="true" />
+		<action name="procSocialxeserverAdminInsertServiceModule" type="controller" standalone="true" />
+		<action name="procSocialxeserverAdminUpdateServiceModule" type="controller" standalone="true" />
+
+		<action name="dispSocialxeserverClientList" type="view" index="true" />
+		<action name="dispSocialxeserverInsertClient" type="view" />
+		<action name="dispSocialxeserverModifyClient" type="view" />
+
+		<action name="procSocialxeserverInsertClient" type="controller" />
+		<action name="procSocialxeserverDeleteCheckedClient" type="controller" />
+		<action name="procSocialxeserverAPI" type="controller" standalone="true" method="get|post" />
+		<action name="procSocialxeserverCallback" type="controller" standalone="true" method="get" />
+	</actions>
+	<menus>
+		<menu name="socialxeserver" type="all">
+			<title xml:lang="ko">SocialXE 서버</title>
+			<title xml:lang="jp">SocialXEサーバ</title>
+			<title xml:lang="zh-CN">SocialXE服务器</title>
+			<title xml:lang="zh-TW">SocialXE 主機</title>
+			<title xml:lang="en">SocialXE server</title>
+		</menu>
+	</menus>
+</module>

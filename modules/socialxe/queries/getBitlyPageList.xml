@@ -1,0 +1,17 @@
+<query id="getBitlyPageList" action="select">
+	<tables>
+		<table name="socialxe_bitly" />
+	</tables>
+	<columns>
+		<column name="*" />
+	</columns>
+	<conditions>
+		<condition operation="like" column="title" var="title" pipe="and" />
+	</conditions>
+	<navigation>
+		<index var="list_order" default="regdate" order="desc" />
+		<list_count var="list_count" default="10" />
+		<page_count var="page_count" default="10" />
+		<page var="page" default="1" />
+	</navigation>
+</query>

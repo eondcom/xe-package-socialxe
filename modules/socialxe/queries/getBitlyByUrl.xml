@@ -1,0 +1,11 @@
+<query id="getBitlyByUrl" action="select">
+	<tables>
+		<table name="socialxe_bitly" />
+	</tables>
+	<columns>
+		<column name="*" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="url" var="url" pipe="and" />
+	</conditions>
+</query>
