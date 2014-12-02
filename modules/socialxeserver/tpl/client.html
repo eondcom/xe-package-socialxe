@@ -3,6 +3,16 @@
 <!--%import("filter/delete_checked.xml")-->
 
 <!-- 목록 -->
+<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'modules/socialxeserver/tpl/client/1'" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+	<p>{$XE_VALIDATOR_MESSAGE}</p>
+</div>
+
+<form ruleset="deleteClient" class="x_form-horizontal" action="{Context::getRequestUri()}" method="post">
+	<input type="hidden" name="module" value="socialxeserver" />
+	<input type="hidden" name="act" value="procSocialxeserverAdminDeleteCheckedClient" />
+	<input type="hidden" name="page" value="{$page}" />
+	<input type="hidden" name="xe_validator_id" value="modules/socialxeserver/tpl/client/1" />
+
 <table class="x_table x_table-striped x_table-hover">
 <caption>Total {number_format($total_count)}, Page {number_format($page)}/{number_format($total_page)}</caption>
 <thead>
