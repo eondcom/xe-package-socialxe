@@ -40,9 +40,12 @@
 			$client_srl_list= explode('|@|', $cart);
 			$client_count = count($client_srl_list);
 			if(!$client_count) return $this->stop('msg_invalid_request');
-
+			$args = new stdClass();
 			$args->client_srls = implode(',', $client_srl_list);
-			return executeQuery('socialxeserver.deleteClient', $args);
+			executeQuery('socialxeserver.deleteClient', $args);
+			$msg_code = '설정삭제 완료';
+			$this->setMessage($msg_code);
+			$this->setRedirectUrl(getNotEncodedUrl('', 'module', 'admin', 'act', 'dispSocialxeserverAdminClient'));
 		}
 
 		// 서비스 모듈 생성
